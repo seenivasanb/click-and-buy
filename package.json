@@ -1,0 +1,23 @@
+{
+  "name": "ai-mirror-react-poc",
+  "version": "0.0.1",
+  "description": "React POC Project for E-Commerce site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc.git"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "AI-MIRROR TEAM (seenivasan.balakrishnan@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc/issues"
+  },
+  "homepage": "https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc#readme"
+}
