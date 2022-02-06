@@ -25,5 +25,6 @@ jobs:
         - name: Deploy
           run: | 
             git config --global user.name "SeenivasanBalakrishnan"
-            git config --global user.email "seenivasan.balakrishnan@csscorp.com"            
+            git config --global user.email "seenivasan.balakrishnan@csscorp.com"
+            git config --global credential.helper wincred
             yarn run deploy
