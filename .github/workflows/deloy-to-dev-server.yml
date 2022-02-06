@@ -23,7 +23,7 @@ jobs:
           run: yarn build
             
         - name: Deploy
-          run:
+          run: | 
             git config --global user.name "SeenivasanBalakrishnan"
             git config --global user.email "seenivasan.balakrishnan@csscorp.com"            
             yarn run deploy
