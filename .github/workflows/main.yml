@@ -15,4 +15,4 @@ jobs:
           run: yarn build
 
         - name: Deploy 🚨
-          run: git git gh-deploy build/
+          run: make deploy
