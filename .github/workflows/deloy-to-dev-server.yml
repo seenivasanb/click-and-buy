@@ -2,9 +2,9 @@ name: CI - Deploy to dev-server
 
 on:
   push:
-    branches: [ main, test-dev ]
+    branches: [ dev-test ]
   pull_request:
-    branches: [ main, test-dev ]
+    branches: [ dev-test ]
 
 jobs:
     build:
@@ -21,8 +21,9 @@ jobs:
 
         - name: Build
           run: yarn build
-            
-        - name: Deploy       
+          
+        - name: Deploy
+          if: ${{ github.event_name == 'push' }}
           uses: JamesIves/github-pages-deploy-action@v4.2.3
           with:
             branch: dev-server # The branch the action should deploy to.
