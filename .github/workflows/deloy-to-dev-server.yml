@@ -8,10 +8,8 @@ on:
 
 jobs:
     build:
-      name: Build
-
+      name: Initialize
       runs-on: ubuntu-latest
-
       steps:
         - name: Checkout
           uses: actions/checkout@v2
