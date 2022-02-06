@@ -1,7 +1,0 @@
-# Dependency directories & lock files
-node_modules/
-package-lock.json
-yarn.lock
-
-# Build directories
-build/
