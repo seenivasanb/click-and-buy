@@ -1,4 +1,4 @@
-name: CI - Deploy to dev-server
+name: CI - Deploy to dev-servers
 
 on:
   push:
