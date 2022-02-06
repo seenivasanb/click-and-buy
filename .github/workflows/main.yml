@@ -11,8 +11,11 @@ jobs:
         - name: Install 🔧
           run: yarn install
 
+        - name: Install GH-Pages
+          run: yarn add --D gh-pages
+          
         - name: Build 🏗️
           run: yarn build
 
         - name: Deploy 🚨
-          run: make deploy
+          run: yarn run deploy
