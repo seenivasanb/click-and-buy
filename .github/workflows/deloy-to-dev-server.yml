@@ -2,9 +2,9 @@ name: CI - Deploy to dev-server
 
 on:
   push:
-    branches: [ develop, main ]
+    branches: [ main, test-dev ]
   pull_request:
-    branches: [ develop, main ]
+    branches: [ main, test-dev ]
 
 jobs:
     build:
