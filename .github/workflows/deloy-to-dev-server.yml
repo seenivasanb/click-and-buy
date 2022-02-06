@@ -17,8 +17,10 @@ jobs:
           uses: actions/checkout@v2
           
         - name: User Login  
-          uses: fregante/setup-git-user@v1
-
+          run: |
+            git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+            git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+            
         - name: Install Dependency
           run: yarn
 
