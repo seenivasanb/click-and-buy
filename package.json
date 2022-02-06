@@ -6,10 +6,47 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode=production",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src/**/*.tsx --fix",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc.git"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "AI-MIRROR TEAM (seenivasan.balakrishnan@csscorp.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc/issues"
+  },
+  "homepage": "https://seenivasanbalakrishnan.github.io/ai-mirror-react-poc/",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.7",
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.2",
+    "@typescript-eslint/parser": "^5.9.1",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
     "json-server": "^0.17.0",
