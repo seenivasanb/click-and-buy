@@ -16,11 +16,6 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
           
-        - name: User Login  
-          run: |
-            git config --global user.name "SeenivasanBalakrishnan"
-            git config --global user.email "seenivasan.balakrishnan@csscorp.com"
-            
         - name: Install Dependency
           run: yarn
 
@@ -28,4 +23,7 @@ jobs:
           run: yarn build
             
         - name: Deploy
-          run: yarn run deploy
+          run:
+            git config --global user.name "SeenivasanBalakrishnan"
+            git config --global user.email "seenivasan.balakrishnan@csscorp.com"            
+            yarn run deploy
