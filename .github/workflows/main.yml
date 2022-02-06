@@ -1,5 +1,6 @@
+name: Yarn Build and Deploy
 on: push
-  jobs:
+jobs:
     build:
       runs-on: ubuntu-latest
 
