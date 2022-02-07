@@ -1,4 +1,4 @@
-name: CI - Deploy To Host
+name: CI - Build and Deploy
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
     build:
-      name: Initialize
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -29,4 +28,7 @@ jobs:
             target-folder: dev # The deploy the files to dev folder
 
         - name: Done
-          run: echo 'Hooray!';
+          if: ${{ github.event_name == 'pull_request' }}
+          run: echo 'Hooray...! Build is done!';
+          if: ${{ github.event_name == 'push' }}
+          run: echo 'Hooray...! Deployment is done!';
