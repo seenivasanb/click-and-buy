@@ -4,7 +4,7 @@ import './root.css';
 
 const App = () => (
   <div className="container">
-    <h1 className="container__header">AI MIRROR - TEST Deploy</h1>
+    <h1 className="container__header">AI MIRROR - TEST</h1>
   </div>
 );
 
