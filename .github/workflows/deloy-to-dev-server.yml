@@ -28,7 +28,7 @@ jobs:
             target-folder: dev # The deploy the files to dev folder
 
         - name: Done
-          if: ${{ github.event_name == 'pull_request' }}
-          run: echo 'Hooray...! Build is done!';
-          if: ${{ github.event_name == 'push' }}
-          run: echo 'Hooray...! Deployment is done!';
+        -  if: ${{ github.event_name == 'pull_request' }}
+           run: echo 'Hooray...! Build is done!';
+        -  if: ${{ github.event_name == 'push' }}
+           run: echo 'Hooray...! Deployment is done!';
