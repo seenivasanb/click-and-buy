@@ -7,7 +7,7 @@ on:
     branches: [ development ]
 
 jobs:
-    Build_And_Deploy:
+    build:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -27,9 +27,7 @@ jobs:
             folder: build # The folder the action should deploy.
             target-folder: dev # The deploy the files to dev folder
 
-        - name: Done
-          run: |
-            if: ${{ github.event_name == 'pull_request' }} 
-            echo 'Hooray...! Build is done!';
-            if: ${{ github.event_name == 'push' }}
-            echo 'Hooray...! Deployment is done!';
+        - if: ${{ github.event_name == 'pull_request' }}
+          run: echo 'Hooray...! Build is done!';
+        - if: ${{ github.event_name == 'push' }}
+          run: echo 'Hooray...! Deployment is done!';
