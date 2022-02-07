@@ -22,15 +22,16 @@ git clone https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc.git
 ### Create new branch
 Create new branch from the `development` branch using following git command
 ```git
-> git checkout -b new_branch_name origin/development
+git checkout -b new_branch_name origin/development
 ```
-Ex:
+Example:
 ```git
-> git checkout -b development-seeni-home-page origin/development
+git checkout -b development-seeni-home-page origin/development
 ```
 Always use the following naming convention to create the new branches
 > development-USERNAME-MODULE-NAME
-> Ex: `development-seeni-home-page`
+
+Example: `development-seeni-home-page`
 
 And usual commit the changes and push to the current branch.
 
@@ -38,7 +39,7 @@ And usual commit the changes and push to the current branch.
 Create the PR to push the code to the `development` branch. Once it approved you can merge the branch.
 
 ### Test on Dev site
- Use the [Dev URL](https://seenivasanbalakrishnan.github.io/ai-mirror-react-poc/dev/) to test the features in the dev site.
+Use the [Dev URL](https://seenivasanbalakrishnan.github.io/ai-mirror-react-poc/dev/) to test the features in the dev site.
  
 ### Create the PR for Live Push
 Create the PR to push the code to the `main` branch. Once it approved you can merge the branch.
