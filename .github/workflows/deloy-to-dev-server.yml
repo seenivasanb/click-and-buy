@@ -7,31 +7,28 @@ on:
     branches: [ development ]
 
 jobs:
-  
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+          
+        - name: Install Dependency
+          run: yarn
 
-      - name: Install Dependency
-        run: yarn
-
-      - name: Build
-        run:
-          yarn build
-          echo 'Hooray...! Build is done!'
-        
-  Deploy:
-    runs-on: ubuntu-latest
-    steps:
-        - if: ${{ github.event_name == 'push' }}
-          name: Checks Deployment
+        - name: Build
+          run: yarn build
+          
+        - name: Checks Deployment
+          if: ${{ github.event_name == 'push' }}
           uses: JamesIves/github-pages-deploy-action@v4.2.3
           with:
             branch: host # The branch the action should deploy to.
             folder: build # The folder the action should deploy.
             target-folder: dev # The deploy the files to dev folder
-            
+
+        - if: ${{ github.event_name == 'pull_request' }}
+          run: echo 'Hooray...! Build is done!';
+          
         - if: ${{ github.event_name == 'push' }}
-          run: echo 'Hooray...! Deploy is done!';
+          run: echo 'Hooray...! Deployment is done!';
