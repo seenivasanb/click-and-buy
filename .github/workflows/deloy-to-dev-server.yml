@@ -1,14 +1,13 @@
-name: CI - Deploy To Host
+name: CI Live - Build and Deploy
 
 on:
   push:
-    branches: [ development ]
+    branches: [ main ]
   pull_request:
-    branches: [ development ]
+    branches: [ main ]
 
 jobs:
-    build:
-      name: Initialize
+    Build_And_Deploy:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
@@ -20,10 +19,15 @@ jobs:
         - name: Build
           run: yarn build
           
-        - name: Deploy
+        - name: Checks Deployment
           if: ${{ github.event_name == 'push' }}
           uses: JamesIves/github-pages-deploy-action@v4.2.3
           with:
             branch: host # The branch the action should deploy to.
             folder: build # The folder the action should deploy.
-            target-folder: dev # The deploy the files to dev folder
+            target-folder: live # The deploy the files to dev folder
+
+        - if: ${{ github.event_name == 'pull_request' }}
+          run: echo 'Hooray...! Build is done!';
+        - if: ${{ github.event_name == 'push' }}
+          run: echo 'Hooray...! Deployment is done!';
