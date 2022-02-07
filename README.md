@@ -4,14 +4,14 @@
 Hi!
 This is the POC project to explore the React JS knowledge with developing the React Web Application for the E-Commerce site.
 
-## Development flow
+## Development Workflow
  1. [Clone the Repository](../../#clone-the-Repository)
  2. [Create the new branch](../../#create-new-branch)
  3. [Commit and Push the changes](../../#create-new-branch)
  4. [Create the PR for Dev Push](../../#create-the-PR-for-dev-push)
  5. [Test on Dev Site](../../#test-on-live-site)
  4. [Create the PR for Live Push](../../#create-the-PR-for-live-push)
- 5. [Test to Live site](../../#test-on-live-site)
+ 5. [Test on Live site](../../#test-on-live-site)
 
 ## Get Started
 ### Clone the Repository
@@ -19,7 +19,7 @@ Use the following git command to clone the repository to your local directory
 ```git
 git clone https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc.git
 ```
-### Create new branch
+### Create the new branch
 Create new branch from the `development` branch using following git command
 ```git
 git checkout -b new_branch_name origin/development
