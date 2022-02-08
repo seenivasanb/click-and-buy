@@ -7,7 +7,7 @@ This is the POC project to explore the React JS knowledge with developing the Re
 ## Development Workflow
  1. [Clone the Repository](../../#clone-the-Repository)
  2. [Create the new branch](../../#create-new-branch)
- 3. [Commit and Push the changes](../../#create-new-branch)
+ 3. [Commit and Push on the appropriate](../../#push-to-the-appropriate-branch)
  4. [Create the PR for Dev Push](../../#create-the-PR-for-dev-push)
  5. [Test on Dev Site](../../#test-on-live-site)
  4. [Create the PR for Live Push](../../#create-the-PR-for-live-push)
@@ -33,7 +33,12 @@ Always use the following naming convention to create the new branches
 
 Example: `development-seeni-home-page`
 
-And usual commit the changes and push to the current branch.
+### Push to the approprite branch
+And usual commit the changes and push to the appropriate branch using the following command.
+```git
+git push origin HEAD
+```
+Please don't use normal `git push`, it may push the code directly into development branch.
 
 ### Create the PR for Dev Push
 Create the PR to push the code to the `development` branch. Once it approved you can merge the branch.
