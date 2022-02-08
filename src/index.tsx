@@ -4,7 +4,7 @@ import './root.css';
 
 const App = () => (
   <div className="container">
-    <h1 className="container__header">AI MIRROR - TEST changes for sample commit</h1>
+    <h1 className="container__header">AI MIRROR - testing SPP</h1>
   </div>
 );
 
