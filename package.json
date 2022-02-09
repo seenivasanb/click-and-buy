@@ -2,7 +2,7 @@
   "name": "ai-mirror-react-poc",
   "version": "0.0.1",
   "description": "React POC Project for E-Commerce site",
-  "main": "./src/index.tsx",
+  "main": "./src/app.tsx",
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode=production",
