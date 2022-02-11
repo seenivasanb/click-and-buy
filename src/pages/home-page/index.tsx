@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { memo } from "react"
 
-export default () => {
+export default memo(() => {
+    console.log("Home Page");
     return (
-        <div>Home Page</div>
+        <h1>Home page</h1>
     )
-}
+})

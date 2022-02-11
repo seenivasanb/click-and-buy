@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { memo } from "react"
 
-export default () => {
+export default memo(() => {
+    console.log("Not Found Page");
     return (
-        <div>Not Found Page</div>
+        <h1>Not found page</h1>
     )
-}
+})

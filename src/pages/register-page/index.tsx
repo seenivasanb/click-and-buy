@@ -1,12 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { memo } from "react"
+import { Link } from "react-router-dom"
+import "./index.css"
 
-export default () => {
+export default memo(() => {
+    console.log("Register Page");
     return (
-        <div>
-            <div>Register Page</div>
-            <Link to="/login">Login</Link>
-        </div>
-
+        <section className="register">
+            <h1>Register page</h1>
+            <Link className="register__link" to="/login">Login</Link>
+        </section>
     )
-}
+})

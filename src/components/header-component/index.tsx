@@ -1,17 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { memo } from "react"
+import { Link } from "react-router-dom"
+import "./index.css"
 
-export const Header = () => {
+export default memo(() => {
+    console.log("Header Component");
     return (
-        <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/spp">SPP</Link></li>
-                <li><Link to="/checkout">Checkout</Link></li>
-                <li><Link to="/order-confirmation">Order Confirmation</Link></li>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/register">Register</Link></li>
-            </ul>
-        </div>
+        <header className="header">
+            <div className="header__logo">Click<span>&</span>Buy</div>
+            <nav className="header__nav-bar">
+                <Link className="header__nav-bar__link" to="/">Home</Link>
+                <Link className="header__nav-bar__link" to="/spp">SPP</Link>
+                <Link className="header__nav-bar__link" to="/checkout">Checkout</Link>
+                <Link className="header__nav-bar__link" to="/order-confirm">Order Confirm</Link>
+                <Link className="header__nav-bar__link" to="/login">Login</Link>
+                <Link className="header__nav-bar__link" to="/register">Register</Link>
+            </nav>
+        </header>
     )
-}
+})

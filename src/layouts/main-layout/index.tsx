@@ -1,12 +1,14 @@
-import { HeaderComponent } from './../../components'
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { ContainerComponent, FooterComponent, HeaderComponent } from "./../../components"
+import React, { Fragment, memo } from "react"
+import { Outlet } from "react-router-dom"
 
-export const Main = () => {
+export const Main = memo(() => {
+    console.log("Main Layout");
     return (
-        <div>
+        <Fragment>
             <HeaderComponent />
-            <Outlet />
-        </div>
+            <ContainerComponent page={<Outlet />} />
+            <FooterComponent />
+        </Fragment>
     )
-}
+})
