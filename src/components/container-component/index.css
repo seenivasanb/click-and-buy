@@ -1,0 +1,5 @@
+.container {
+    @apply
+    m-10
+    min-h-[60vh]
+}
