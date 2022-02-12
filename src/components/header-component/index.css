@@ -1,0 +1,29 @@
+.header {
+    @apply
+    text-primary
+    flex
+    items-center
+    justify-between
+    py-2
+    px-6
+    shadow-md
+    shadow-slate-200;
+    &__logo {
+        @apply
+        tracking-tight
+        text-3xl;
+        span {
+            @apply font-thin
+        }
+    }
+    &__nav-bar {
+        @apply
+        flex
+        font-family-bold;
+        &__link {
+            @apply
+            hover:text-cyan-600
+            mx-4
+        }
+    }
+}

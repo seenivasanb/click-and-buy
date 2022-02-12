@@ -1,15 +1,36 @@
 @tailwind base;
 @tailwind components;
+
+@layer base {
+    @font-face {
+        font-family: "regular-font";
+        src: local("regular-font"), url(./../assests/fonts/regular.woff2) format("woff2");
+    }
+    @font-face {
+        font-family: "bold-font";
+        src: local("bold-font"), url(./../assests/fonts/bold.woff2) format("woff2");
+    }
+}
 @tailwind utilities;
 
-.container {
-    @apply w-full h-[100vh] flex justify-center items-center;
-    &__header {
-        @apply
-        first-letter:text-red-600 
-        first-letter:text-6xl
-        text-green-600 
-        text-2xl
-        font-bold;
+/* base changes */
+body {
+    @apply 
+    tracking-wider
+    text-primary;
+    h1 {
+        @apply text-4xl
+    }
+    h2 {
+        @apply text-3xl
+    }
+    h3 {
+        @apply text-2xl
+    }
+    h4 {
+        @apply text-xl
+    }
+    h1, h2, h3, h4 {
+        @apply font-family-bold leading-relaxed;
     }
 }

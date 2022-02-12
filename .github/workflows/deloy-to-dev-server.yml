@@ -1,10 +1,10 @@
-name: CI Live - Build and Deploy
+name: CI - Build and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches: [ development ]
   pull_request:
-    branches: [ main ]
+    branches: [ development ]
 
 jobs:
     Build_And_Deploy:
@@ -25,7 +25,7 @@ jobs:
           with:
             branch: host # The branch the action should deploy to.
             folder: build # The folder the action should deploy.
-            target-folder: live # The deploy the files to dev folder
+            target-folder: dev # The deploy the files to dev folder
 
         - if: ${{ github.event_name == 'pull_request' }}
           run: echo 'Hooray...! Build is done!';

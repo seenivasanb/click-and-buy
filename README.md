@@ -1,4 +1,3 @@
-
 # AI Mirror - React POC
 
 Hi!
@@ -34,7 +33,7 @@ Always use the following naming convention to create the new branches
 Example: `development-seeni-home-page`
 
 ### Push to the approprite branch
-And usual commit the changes and push to the appropriate branch using the following command.
+As usual commit the changes and push to the appropriate branch using the following command.
 ```git
 git push origin HEAD
 ```

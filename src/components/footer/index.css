@@ -1,0 +1,6 @@
+footer {
+    @apply
+    bg-primary
+    p-10
+    text-white
+}
