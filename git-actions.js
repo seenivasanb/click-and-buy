@@ -6,21 +6,19 @@ const { exec } = require('child_process');
 let args = process.argv;
 args.splice(0, 2);
 
-console.log(args);
-
 const action = args[0];
 
 const handleAdd = (err) => {
     if (err) {
         console.log(err);
-        console.log('Unable to add files!!');
+        console.log('Unable to add files!');
         return;
     }
     if (action === 'commit' || action === 'commit-push') {
         const message = args[1];
         exec(`git commit -m "${message}" .`, handleCommit)
     }
-    console.log('Files add success!!');
+    console.log('Add files success!');
 }
 
 const handleCommit = (err) => {
