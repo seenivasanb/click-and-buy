@@ -5,8 +5,19 @@ import { MainLayout } from "./layouts";
 import { HomePage, CheckoutPage, SingleProductPage, OrderConfirmationPage, LoginPage, RegisterPage, NotFoundPage } from "./pages";
 import "./root.css";
 
-const App = () => (
-  <BrowserRouter>
+/**
+ * Turns URL path into router basename by removing everything after the last slash
+ * @param {string} path URL path, probably window.location.pathname
+ * @returns {string} final basename
+ */
+const getBasename = (path: string): string => path.substring(0, path.lastIndexOf('/'));
+
+/**
+ * Base Template component holding all the pages and sub components
+ * @returns {JSX.Element}
+ */
+const App = (): JSX.Element => (
+  <BrowserRouter basename={getBasename(window.location.pathname)}>
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Suspense fallback="Loading..."><HomePage /></Suspense>} />
