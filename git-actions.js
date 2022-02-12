@@ -1,7 +1,7 @@
 /*
  * scripts to use in the package.json
  */
-// import { exec } from 'child_process';
+
 const { exec } = require('child_process');
 let args = process.argv;
 args.splice(0, 2);
