@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkai_mirror_react_poc=self.webpackChunkai_mirror_react_poc||[]).push([[774],{774:(e,r,c)=>{c.r(r),c.d(r,{default:()=>o});var a=c(294);const o=(0,a.memo)((function(){return console.log("SPP Page"),a.createElement("h1",null,"Single product page")}))}}]);
+//# sourceMappingURL=774.bundle.js.map
