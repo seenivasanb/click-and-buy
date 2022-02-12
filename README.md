@@ -1,4 +1,3 @@
-
 # AI Mirror - React POC
 
 Hi!
