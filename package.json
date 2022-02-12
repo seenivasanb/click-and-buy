@@ -7,7 +7,11 @@
     "start": "webpack serve --open",
     "build": "webpack --mode=production",
     "lint": "eslint src",
-    "lint:fix": "eslint src/**/*.tsx --fix"
+    "lint:fix": "eslint src/**/*.tsx --fix",
+    "commit": "node git-actions.js commit",
+    "push": "node git-actions.js push",
+    "commit-push": "node git-actions.js commit-push",
+    "branch": "node git-actions.js branch"
   },
   "repository": {
     "type": "git",
