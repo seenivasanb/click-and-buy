@@ -59,7 +59,7 @@ const handleBranchPushToRemote = (err) => {
         return;
     }
     const branchName = args[1];
-    console.log(`The '${branchName}!' has been pushed to remote!`);
+    console.log(`The '${branchName}' has been pushed to remote!`);
 }
 
 switch (action) {
