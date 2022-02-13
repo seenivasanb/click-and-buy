@@ -6,7 +6,7 @@ This is the POC project to explore the React JS knowledge with developing the Re
 ## Development Workflow
  1. [Clone the Repository](../../#clone-the-Repository)
  2. [Create the new branch](../../#create-new-branch)
- 3. [Commit and Push on the appropriate](../../#push-to-the-appropriate-branch)
+ 3. [Commit and Push on the appropriate](../../#commit-and-push-to-the-appropriate-branch)
  4. [Create the PR for Dev Push](../../#create-the-PR-for-dev-push)
  5. [Test on Dev Site](../../#test-on-live-site)
  4. [Create the PR for Live Push](../../#create-the-PR-for-live-push)
