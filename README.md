@@ -32,7 +32,7 @@ Always use the following naming convention to create the new branches
 
 Example: `development-seeni-home-page`
 
-### Commit and Push to the approprite branch
+### Commit and Push to the appropriate branch
 #### Commit using yarn
 Use the following command to commit all the changes with the message.
 ```git
