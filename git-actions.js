@@ -8,6 +8,18 @@ args.splice(0, 2);
 
 const action = args[0];
 
+const createPRLink = () => {
+    exec('git branch --show-current', (err, stdout) => {
+        if (err) {
+            console.log('Unable to find the current branch name');
+        }
+        if (typeof stdout === 'string') {
+            const currentBranch = stdout.trim();
+            console.log(`Create the PR using: https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc/compare/${currentBranch}`);
+        }
+    });
+}
+
 const handleAdd = (err) => {
     if (err) {
         console.log(err);
@@ -39,6 +51,7 @@ const handlePush = (err) => {
         return;
     }
     console.log('Push success!');
+    createPRLink();
 }
 
 const handleBranch = (err) => {
@@ -64,7 +77,7 @@ const handleBranchPushToRemote = (err) => {
 
 switch (action) {
     case 'commit':
-        exec(`git add .`, handleAdd)
+        exec(`git add .`, handleAdd);
         break;
     case 'commit-push':
         exec(`git add .`, handleAdd);
