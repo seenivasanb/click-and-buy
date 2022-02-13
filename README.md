@@ -19,25 +19,46 @@ Use the following git command to clone the repository to your local directory
 git clone https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc.git
 ```
 ### Create the new branch
-Create new branch from the `development` branch using following git command
+Create new branch from the `development` branch using following `yarn` command
 ```git
-git checkout -b new_branch_name origin/development
+yarn branch NEW-BRANCH-NAME
 ```
 Example:
 ```git
-git checkout -b development-seeni-home-page origin/development
+yarn branch development-seeni-home-page
 ```
 Always use the following naming convention to create the new branches
 > development-USERNAME-MODULE-NAME
 
 Example: `development-seeni-home-page`
 
-### Push to the approprite branch
-As usual commit the changes and push to the appropriate branch using the following command.
+### Commit and Push to the approprite branch
+#### Commit using yarn
+Use the following command to commit all the changes with the message.
 ```git
-git push origin HEAD
+yarn commit "COMMIT_MESSAGE"
 ```
-Please don't use normal `git push`, it may push the code directly into development branch.
+Example:
+```git
+yarn commit "Home page has been created"
+```
+it will add all the tracked and untracked files in to the commit
+
+#### Push using yarn
+Use the following command to push the changes into the current branch on the remote server.
+```git
+Yarn push
+```
+
+#### Commit-Push using yarn
+Use the following command to commit and push the changes at a time into the current branch on the remote server.
+```git
+yarn commit-push "COMMIT_MESSAGE"
+```
+Example:
+```git
+yarn commit-push "Home page has been created"
+```
 
 ### Create the PR for Dev Push
 Create the PR to push the code to the `development` branch. Once it approved you can merge the branch.
