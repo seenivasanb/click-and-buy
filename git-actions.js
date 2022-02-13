@@ -19,7 +19,7 @@ const handleAdd = (err) => {
         exec(`git commit -m "${message}" .`, handleCommit)
     }
     console.log('Add files success!');
-    console.log('https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc/compare/"$(git branch --show-current)"');
+    console.log(`https://github.com/SeenivasanBalakrishnan/ai-mirror-react-poc/compare/${exec('git branch --show-current')}`);
 }
 
 const handleCommit = (err) => {
