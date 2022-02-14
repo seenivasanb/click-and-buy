@@ -15,7 +15,7 @@ export default ({ type, noOfColumns, products }: Props) => {
     return (
         <section className="products" style={{ gridTemplateColumns: `repeat(${noOfColumns}, minmax(0, 1fr))` }}>
             {products?.map(product =>
-                <ProductComponent type={type} product={product} />
+                <ProductComponent key={product.id} type={type} product={product} />
             )}
         </section>
     )
