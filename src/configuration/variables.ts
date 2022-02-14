@@ -1,0 +1,1 @@
+export const ASSETS_PATH = "https://raw.githubusercontent.com/SeenivasanBalakrishnan/ai-mirror-react-poc/host/assests";

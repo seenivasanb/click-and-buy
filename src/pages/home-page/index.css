@@ -1,0 +1,19 @@
+.trending-now {
+    @apply
+    py-10;
+    &__title {
+        @apply
+        after:block
+        after:mb-14
+        after:mt-8
+        after:h-[6px]
+        after:text-center
+        after:w-[50px]
+        after:bg-orange-500
+        flex
+        flex-col
+        items-center
+        py-7
+        text-6xl;
+    }
+}
