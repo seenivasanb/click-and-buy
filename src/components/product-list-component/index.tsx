@@ -10,10 +10,12 @@ type Props = {
 }
 
 export default ({ type, noOfColumns, products }: Props) => {
+    const gridColoumClass = `grid-cols-${noOfColumns}`;
+
     return (
-        <section className={`products grid-cols-${noOfColumns}`}>
+        <section className={`products ${gridColoumClass}`}>
             {products?.map(product =>
-                <ProductComponent type={type} product={product} />
+                <ProductComponent key={product.id} type={type} product={product} />
             )}
         </section>
     )
