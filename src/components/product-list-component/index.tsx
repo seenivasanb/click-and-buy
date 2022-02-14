@@ -10,10 +10,10 @@ type Props = {
 }
 
 export default ({ type, noOfColumns, products }: Props) => {
-    const gridColoumClass = `grid-cols-${noOfColumns}`;
+    console.log("Product List Component");
 
     return (
-        <section className={`products ${gridColoumClass}`}>
+        <section className="products" style={{ gridTemplateColumns: `repeat(${noOfColumns}, minmax(0, 1fr))` }}>
             {products?.map(product =>
                 <ProductComponent key={product.id} type={type} product={product} />
             )}
