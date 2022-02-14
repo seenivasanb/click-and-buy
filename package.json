@@ -11,7 +11,8 @@
     "commit": "node git-actions.js commit",
     "push": "node git-actions.js push",
     "commit-push": "node git-actions.js commit-push",
-    "branch": "node git-actions.js branch"
+    "branch": "node git-actions.js branch",
+    "up": "node git-actions.js up"
   },
   "repository": {
     "type": "git",

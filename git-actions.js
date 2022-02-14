@@ -54,6 +54,16 @@ const handlePush = (err) => {
     createPRLink();
 }
 
+const handleUp = (err) => {
+    if (err) {
+        console.log(err);
+        console.log('Unable to fetch the changes from origin/developoment');
+        console.log('Please commit or stash the modified files and try again!');
+        return;
+    }
+    console.log('Fetch success from the origin/development!');
+}
+
 const handleBranch = (err) => {
     if (err) {
         console.log(err);
@@ -88,5 +98,8 @@ switch (action) {
     case 'branch':
         const branchName = args[1];
         exec(`git checkout -b ${branchName} origin/development`, handleBranch)
+        break;
+    case 'up':
+        exec(`git pull origin development`, handleUp)
         break;
 }
