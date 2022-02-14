@@ -22,8 +22,8 @@ export default memo(({ type, product }: Props) => {
                             {!!product?.sizes?.length &&
                                 <div className="product__sizes">
                                     <p className="product__sizes__title">Select size:</p>
-                                    {product?.sizes?.map(size =>
-                                        <span className="product__sizes__size">{size}</span>
+                                    {product?.sizes?.map((size, index) =>
+                                        <span className="product__sizes__size" key={index}>{size}</span>
                                     )}
                                 </div>
                             }

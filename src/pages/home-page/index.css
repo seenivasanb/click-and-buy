@@ -1,4 +1,5 @@
-.trending-now {
+.trending-now,
+.new-arrivals {
     @apply
     py-10;
     &__title {
