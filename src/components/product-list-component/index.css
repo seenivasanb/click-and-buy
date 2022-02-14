@@ -1,0 +1,7 @@
+.products {
+    @apply
+    grid
+    gap-16
+    my-6
+    px-[5%];
+}
