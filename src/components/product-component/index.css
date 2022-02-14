@@ -1,0 +1,70 @@
+.products {
+    @apply
+    grid
+    gap-16
+    grid-cols-3
+    px-[5%];
+}
+.product {
+    &__details {
+        @apply
+        mt-6
+        mx-5
+    }
+    &__image {
+        @apply
+        relative;
+    }
+    &__sub-title {
+        @apply
+        leading-6
+        opacity-80
+    }
+    &__title {
+        @apply
+        leading-8
+    }
+    &__overlay {
+        @apply
+        absolute
+        bg-primary
+        bg-opacity-40
+        cursor-pointer
+        duration-500
+        flex
+        items-center
+        justify-center
+        h-full
+        hover:opacity-100
+        left-0
+        opacity-0
+        top-0
+        transition-opacity
+        w-full        
+    }
+    &__sizes {
+        @apply
+        font-bold;
+        &__title {
+            @apply
+            mx-4
+            text-white
+            text-opacity-70
+        }
+        &__size {
+            @apply
+            border
+            inline-block
+            duration-500
+            m-2
+            min-w-[100px]
+            px-4
+            py-3
+            text-white
+            text-center
+            transition-all
+            hover:text-primary
+            hover:bg-white
+        }
+    }
+}
