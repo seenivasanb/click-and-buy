@@ -4,20 +4,21 @@
 @layer base {
     @font-face {
         font-family: "regular-font";
-        src: local("regular-font"), url(./../assests/fonts/regular.woff2) format("woff2");
+        src: local("regular-font"), url(./../assets/fonts/regular.woff2) format("woff2");
     }
     @font-face {
         font-family: "bold-font";
-        src: local("bold-font"), url(./../assests/fonts/bold.woff2) format("woff2");
+        src: local("bold-font"), url(./../assets/fonts/bold.woff2) format("woff2");
     }
 }
 @tailwind utilities;
 
 /* base changes */
 body {
-    @apply 
-    tracking-wider
-    text-primary;
+    @apply
+    font-family-regular
+    text-primary
+    tracking-wider;
     h1 {
         @apply text-4xl
     }
