@@ -8,7 +8,7 @@ type Props = {
 export default memo((prop: Props) => {
     console.log("Container Component");
     return (
-        <section className="container">
+        <section className="wrapper">
             {prop.page}
         </section>
     )

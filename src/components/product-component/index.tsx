@@ -23,7 +23,7 @@ export default memo(({ category, product, size }: Props) => {
     return (
         <Fragment>
             {category === "product-with-size" &&
-                <div className={`product size-${size}`} key={product.id}>
+                <div className={`product product--with-size product--${size}`} key={product.id}>
                     <div className="product__image">
                         <img src={`${ASSETS_PATH}${product.img}`} alt="Product" />
 
@@ -46,15 +46,15 @@ export default memo(({ category, product, size }: Props) => {
             }
 
             {category === "product-with-cta" &&
-                <div className={`product-tile size-${size}`}>
-                    <div className="product-tile__image">
+                <div className={`product product--with-cta product--${size}`}>
+                    <div className="product__image">
                         <img src={`${ASSETS_PATH}${product.img}`} alt={product.title} />
                     </div>
-                    <div className="product-tile__details">
-                        <h3 className="product-tile__title">{product.title}</h3>
-                        <div className="product-tile__sub-title">{product.subTitle}</div>
-                        <div className="product-tile__cta">
-                            <Link className="product-tile__cta__link" to="/spp">Shop now</Link>
+                    <div className="product__details">
+                        <h3 className="product__title">{product.title}</h3>
+                        <div className="product__sub-title">{product.subTitle}</div>
+                        <div className="product__cta">
+                            <Link className="product__cta__link" to="/spp">Shop now</Link>
                         </div>
                     </div>
                 </div>

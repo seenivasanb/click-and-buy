@@ -16,4 +16,10 @@ export enum ProductSizeType {
     small = "small",
     medium = "medium",
     large = "large",
+    extraLarge = "extra-large",
+}
+
+export enum ProductAlignmentType {
+    row = "row",
+    column = "col"
 }

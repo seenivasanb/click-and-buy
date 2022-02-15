@@ -1,20 +1,24 @@
 .trending-now,
 .new-arrivals {
     @apply
-    py-10;
+    mb-10
+    md:mb-16;
     &__title {
         @apply
         after:block
-        after:mb-8
-        after:mt-8
+        after:my-4
+        md:after:my-6
+        lg:after:my-8
         after:h-[6px]
         after:text-center
         after:w-[50px]
-        after:bg-orange-500
+        after:bg-rose-400
         flex
         flex-col
         items-center
-        py-7
-        text-6xl;
+        py-2
+        md:py-4
+        text-4xl
+        lg:text-6xl;
     }
 }
