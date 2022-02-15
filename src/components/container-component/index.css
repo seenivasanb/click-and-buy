@@ -1,5 +1,6 @@
-.container {
+.wrapper {
     @apply
-    m-10
-    min-h-[60vh]
+    md:container
+    md:mx-auto
+    p-4
 }
