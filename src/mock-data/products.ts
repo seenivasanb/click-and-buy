@@ -19,6 +19,13 @@ export const PRODUCTS = [
         title: 'Monaco Blue',
         subTitle: 'LARQ Pitcher PureVis™'
     },
+    {
+        id: 4,
+        img: '/images/products/product-2.jpg',
+        title: 'Obsidian Black',
+        subTitle: 'LARQ Bottle Filtered',
+        sizes: ['17 oz', '25 oz']
+    }
 ];
 
 export const PRODUCTS_TILES = [
@@ -35,5 +42,12 @@ export const PRODUCTS_TILES = [
         title: 'LARQ Bottle Movement PureVis™',
         subTitle: 'Self cleaning & light as air.',
         sizes: ['17 oz', '25 oz']
-    }
+    },
+    {
+        id: 3,
+        img: '/images/products-with-space/product-1.jpg',
+        title: 'LARQ Pitcher PureVis™',
+        subTitle: 'Brilliantly clean water beyond filtration.',
+        sizes: ['17 oz', '25 oz']
+    },
 ];
