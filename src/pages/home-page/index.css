@@ -5,7 +5,7 @@
     &__title {
         @apply
         after:block
-        after:mb-14
+        after:mb-8
         after:mt-8
         after:h-[6px]
         after:text-center
