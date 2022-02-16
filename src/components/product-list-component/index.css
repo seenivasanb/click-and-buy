@@ -1,7 +1,58 @@
 .products {
     @apply
-    flex
-    flex-row
-    flex-wrap
-    justify-center;
+    grid;
+    @screen sm {
+        @apply
+        gap-7
+        grid-cols-3;
+    }
+    @screen md {
+        @apply
+        gap-8;
+        &--medium-1 {
+            @apply
+            grid-cols-1;
+        }
+        &--medium-2 {
+            @apply
+            grid-cols-2;
+        }
+        &--medium-3 {
+            @apply
+            grid-cols-3;
+        }
+    }
+    @screen lg {
+        @apply
+        gap-14;
+        &--large-1 {
+            @apply
+            grid-cols-1;
+        }
+        &--large-2 {
+            @apply
+            grid-cols-2;
+        }
+        &--large-3 {
+            @apply
+            grid-cols-3;
+        }
+    }
+    @screen xl {
+        @apply
+        gap-14;
+        &--extra-large-1 {
+            @apply
+            grid-cols-1;
+        }
+        &--extra-large-2 {
+            @apply
+            grid-cols-2;
+        }
+        &--extra-large-3 {
+            @apply
+            grid-cols-3;
+        }
+    }
+
 }

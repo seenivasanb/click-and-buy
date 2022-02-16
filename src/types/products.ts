@@ -12,14 +12,8 @@ export enum ProductCategoryType {
     productTwoColumns = "product-two-columns",
 }
 
-export enum ProductSizeType {
-    small = "small",
-    medium = "medium",
-    large = "large",
-    extraLarge = "extra-large",
-}
-
-export enum ProductAlignmentType {
-    row = "row",
-    column = "col"
+export type ProductListNoOfColumnsType = {
+    medium?: number,
+    large?: number,
+    extraLarge?: number
 }

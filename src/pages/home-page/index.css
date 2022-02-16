@@ -7,8 +7,6 @@
         @apply
         after:block
         after:my-4
-        md:after:my-6
-        lg:after:my-8
         after:h-[6px]
         after:text-center
         after:w-[50px]
@@ -16,9 +14,12 @@
         flex
         flex-col
         items-center
-        py-2
+        lg:text-6xl
+        lg:after:my-8
         md:py-4
-        text-4xl
-        lg:text-6xl;
+        md:after:my-6
+        md:text-4xl
+        py-2
+        text-2xl
     }
 }

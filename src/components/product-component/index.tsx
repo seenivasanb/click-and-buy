@@ -2,12 +2,12 @@ import { ASSETS_PATH } from "../../configuration/variables";
 import React, { Fragment, memo } from 'react'
 import "./index.css"
 import { Link } from "react-router-dom";
-import { ProductCategoryType, ProductSizeType, ProductType } from "../../types/products";
+import { ProductCategoryType, ProductListNoOfColumnsType, ProductType } from "../../types/products";
 
 type Props = {
     category: ProductCategoryType,
     product: ProductType,
-    size?: ProductSizeType
+    responsiveClasses: string
 }
 
 /**
@@ -17,13 +17,12 @@ type Props = {
  * @param products - array of objects that contains the list of products details
  * @returns {JSX.Element}
  */
-export default memo(({ category, product, size }: Props) => {
+export default memo(({ category, product, responsiveClasses }: Props) => {
     console.log('Product component');
-
     return (
         <Fragment>
             {category === "product-with-size" &&
-                <div className={`product product--with-size product--${size}`} key={product.id}>
+                <div className={`product product--with-size${responsiveClasses}`} key={product.id}>
                     <div className="product__image">
                         <img src={`${ASSETS_PATH}${product.img}`} alt="Product" />
 
@@ -46,7 +45,7 @@ export default memo(({ category, product, size }: Props) => {
             }
 
             {category === "product-with-cta" &&
-                <div className={`product product--with-cta product--${size}`}>
+                <div className={`product product--with-cta${responsiveClasses}`}>
                     <div className="product__image">
                         <img src={`${ASSETS_PATH}${product.img}`} alt={product.title} />
                     </div>
