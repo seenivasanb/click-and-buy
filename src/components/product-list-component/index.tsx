@@ -9,13 +9,6 @@ type Props = {
     noOfColumns?: ProductListNoOfColumnsType
 }
 
-const getClassesByKey = (key: string, object: ProductListNoOfColumnsType) => {
-    let classes = object?.medium ? ` ${key}--medium-${object.medium}` : "";
-    classes += object?.large ? ` ${key}--large-${object.large}` : "";
-    classes += object?.extraLarge ? ` ${key}--extra-large-${object.extraLarge}` : "";
-    return classes;
-}
-
 /**
  * Base Template component holding the HashRouter along with all the basic routes
  * @param category - specifies the type of the product that will be [productWithCTA, productWithSize, productTwoColumns]
@@ -26,13 +19,14 @@ const getClassesByKey = (key: string, object: ProductListNoOfColumnsType) => {
 export default ({ category, noOfColumns, products }: Props): JSX.Element => {
     console.log("Product List Component");
 
-    const productsClasses = noOfColumns ? getClassesByKey('products', noOfColumns) : "";
-    const productClasses = noOfColumns ? getClassesByKey('products', noOfColumns) : "";
+    let productsClasses = noOfColumns?.medium ? `products-medium-${noOfColumns.medium} ` : "";
+    productsClasses += noOfColumns?.large ? `products-large-${noOfColumns.large} ` : "";
+    productsClasses += noOfColumns?.extraLarge ? `products-extra-large-${noOfColumns.extraLarge} ` : "";
 
     return (
-        <section className={`products${productsClasses}`}>
+        <section className={`products products--${category} ${productsClasses}`}>
             {products?.map(product =>
-                <ProductComponent responsiveClasses={productClasses} key={product.id} category={category} product={product} />
+                <ProductComponent key={product.id} category={category} product={product} />
             )}
         </section>
     )

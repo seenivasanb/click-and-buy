@@ -18,8 +18,8 @@ export default memo(() => {
             <section className="new-arrivals">
                 <h1 className="new-arrivals__title">New arrivals</h1>
                 <ProductListComponent
-                    category={ProductCategoryType.productWithSize}
-                    products={PRODUCTS}
+                    category={ProductCategoryType.productWithCTA}
+                    products={PRODUCTS_TILES}
                     noOfColumns={{ medium: 3, large: 2 }} />
             </section>
         </Fragment>

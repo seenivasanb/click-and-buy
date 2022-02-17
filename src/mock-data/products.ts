@@ -45,9 +45,16 @@ export const PRODUCTS_TILES = [
     },
     {
         id: 3,
+        img: '/images/products-with-space/product-2.jpg',
+        title: 'LARQ Bottle Movement PureVis™',
+        subTitle: 'Self cleaning & light as air.',
+        sizes: ['17 oz', '25 oz']
+    },
+    {
+        id: 4,
         img: '/images/products-with-space/product-1.jpg',
         title: 'LARQ Pitcher PureVis™',
         subTitle: 'Brilliantly clean water beyond filtration.',
         sizes: ['17 oz', '25 oz']
-    },
+    }
 ];
