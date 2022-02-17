@@ -1,58 +1,60 @@
 .products {
     @apply
-    grid;
-    @screen sm {
-        @apply
-        gap-7
-        grid-cols-3;
+    grid
+    sm:gap-6
+    md:gap-8
+    xl:gap-14
+    sm:grid-cols-3;
+    &.products-medium-1 {
+        @apply md:grid-cols-1;
     }
-    @screen md {
+    &.products-medium-2 {
+        @apply md:grid-cols-2;
+    }
+    &.products-medium-3 {
+        @apply md:grid-cols-3;
+    }
+    &.products-large-1 {
+        @apply lg:grid-cols-1;
+    }
+    &.products-large-2 {
+        @apply lg:grid-cols-2;
+    }
+    &.products-large-3 {
+        @apply lg:grid-cols-3;
+    }
+    &.products-extra-large-1 {
+        @apply xl:grid-cols-1;
+    }
+    &.products-extra-large-2 {
+        @apply xl:grid-cols-2;
+    }
+    &.products-extra-large-3 {
+        @apply xl:grid-cols-3;
+    }
+    &--product-with-cta {
         @apply
-        gap-8;
-        &--medium-1 {
-            @apply
-            grid-cols-1;
+        grid
+        sm:gap-2
+        lg:gap-6
+        xl:gap-8;
+        &.products-medium-1 {
+            @apply md:gap-8;
         }
-        &--medium-2 {
-            @apply
-            grid-cols-2;
+        &.products-medium-2 {
+            @apply md:gap-6;
         }
-        &--medium-3 {
-            @apply
-            grid-cols-3;
+        &.products-large-1 {
+            @apply lg:gap-14;
+        }
+        &.products-large-2 {
+            @apply lg:gap-8;
+        }
+        &.products-extra-large-2 {
+            @apply xl:gap-10;
+        }
+        &.products-extra-large-3 {
+            @apply xl:gap-6;
         }
     }
-    @screen lg {
-        @apply
-        gap-14;
-        &--large-1 {
-            @apply
-            grid-cols-1;
-        }
-        &--large-2 {
-            @apply
-            grid-cols-2;
-        }
-        &--large-3 {
-            @apply
-            grid-cols-3;
-        }
-    }
-    @screen xl {
-        @apply
-        gap-14;
-        &--extra-large-1 {
-            @apply
-            grid-cols-1;
-        }
-        &--extra-large-2 {
-            @apply
-            grid-cols-2;
-        }
-        &--extra-large-3 {
-            @apply
-            grid-cols-3;
-        }
-    }
-
 }
