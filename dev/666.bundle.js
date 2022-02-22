@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkai_mirror_react_poc=self.webpackChunkai_mirror_react_poc||[]).push([[666],{666:(r,e,o)=>{o.r(e),o.d(e,{default:()=>c});var a=o(294);const c=(0,a.memo)((function(){return console.log("Order confirmation Page"),a.createElement("h1",null,"Order confirmation page")}))}}]);
-//# sourceMappingURL=666.bundle.js.map
