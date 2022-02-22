@@ -3,7 +3,7 @@
     grid
     sm:gap-6
     md:gap-8
-    xl:gap-14;
+    xl:gap-10;
     &--product-with-cta {
         @apply
         grid

@@ -14,7 +14,7 @@
         tracking-tight
         text-3xl;
         span {
-            @apply font-family-regular text-rose-400
+            @apply font-family-regular text-peach
         }
     }
     &__nav-bar {

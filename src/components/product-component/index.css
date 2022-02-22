@@ -103,13 +103,13 @@
                 @apply extra-large;
             }
             .products-row-extra-large-1 & {
-                @apply max-w-[30%] medium;
+                @apply max-w-[30vw] small;
             }
             .products-row-extra-large-2 & {
-                @apply max-w-[47%] large;
+                @apply max-w-[47vw] large;
             }
             .products-row-extra-large-3 & {
-                @apply max-w-[100%] extra-large;
+                @apply max-w-[100vw] extra-large;
             }
         }
     }
