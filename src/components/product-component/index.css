@@ -1,177 +1,119 @@
 .product {
     @apply mb-5 md:mb-0;
     &--with-size {
-        &__details {
-            @apply pt-4 px-5;
-        }
-        &__image {
-            @apply relative;
-        }
-        &__sub-title {
-            @apply
-            leading-none
-            opacity-80
-            text-xs
-            sm:text-base
-            md:text-sm
-            lg:text-lg
-            xl:text-xl;
-            .products-medium-1 & {
-                @apply md:text-xl lg:text-2xl xl:text-3xl;
-            }
-            .products-medium-2 & {
-                @apply md:text-base lg:text-xl xl:text-2xl;
-            }
-            .products-large-1 & {
-                @apply lg:text-2xl xl:text-3xl;
-            }
-            .products-large-2 & {
-                @apply lg:text-xl xl:text-2xl;
-            }
-            .products-large-3 & {
-                @apply lg:text-lg xl:text-xl;
-            }
-            .products-extra-large-1 & {
-                @apply xl:text-3xl;
-            }
-            .products-extra-large-2 & {
-                @apply xl:text-2xl;
-            }
-            .products-extra-large-3 & {
-                @apply xl:text-xl;
-            }
-        }
-        &__title {
-            @apply
-            leading-normal
-            text-lg
-            sm:text-2xl
-            md:text-xl
-            lg:text-2xl 
-            xl:text-3xl;
-            .products-medium-1 & {
-                @apply md:text-3xl lg:text-4xl xl:text-5xl;
-            }
-            .products-medium-2 & {
-                @apply md:text-2xl lg:text-3xl xl:text-4xl;
-            }
-            .products-large-1 & {
-                @apply lg:text-4xl xl:text-5xl;
-            }
-            .products-large-2 & {
-                @apply lg:text-3xl xl:text-4xl;
-            }
-            .products-large-3 & {
-                @apply lg:text-2xl xl:text-3xl;
-            }
-            .products-extra-large-1 & {
-                @apply xl:text-5xl;
-            }
-            .products-extra-large-2 & {
-                @apply xl:text-4xl;
-            }
-            .products-extra-large-3 & {
-                @apply xl:text-3xl;
-            }
-        }
+        &__details { @apply pt-5 px-4; }
+        &__image { @apply relative; }
+        &__sub-title { @apply leading-none opacity-80 text-xs; }
+        &__title { @apply leading-normal text-lg; }
         &__overlay {
-            @apply  
-            absolute
-            bg-primary
-            bg-opacity-40
-            cursor-pointer
-            duration-500
-            flex
-            items-center
-            justify-center
-            h-full
-            hover:opacity-100
-            left-0
-            opacity-0
-            top-0
-            transition-opacity
-            w-full        
+            @apply  absolute bg-primary bg-opacity-40 cursor-pointer
+            duration-500 flex items-center justify-center h-full hover:opacity-100
+            left-0 opacity-0 top-0 transition-opacity w-full;
         }
         &__sizes {
             @apply font-bold;
             &__title {
-                @apply
-                mx-4
-                text-white
-                text-opacity-70
-                lg:text-base 
-                xl:mb-4
-                xl:text-xl;
-                .products-medium-1 & {
-                    @apply md:mb-6 md:text-2xl;
-                }
-                .products-medium-2 & {
-                    @apply md:text-lg;
-                }
-                .products-large-1 & {
-                    @apply lg:mb-6 lg:text-2xl;
-                }
-                .products-large-2 & {
-                    @apply lg:mb-3 lg:text-xl;
-                }
-                .products-large-3 & {
-                    @apply lg:text-base xl:mb-4 xl:text-xl;
-                }
-                .products-extra-large-1 & {
-                    @apply xl:mb-6 xl:text-3xl;
-                }
-                .products-extra-large-2 & {
-                    @apply xl:mb-4 xl:text-2xl;
-                }
-                .products-extra-large-3 & {
-                    @apply xl:mb-4 xl:text-xl;
-                }
+                @apply mb-2 text-xs text-white text-center text-opacity-70;
             }
             &__size {
-                @apply
-                border
-                inline-block
-                duration-500
-                m-2
-                min-w-[70px]
-                px-4
-                py-3
-                text-white
-                text-center
-                transition-all
-                hover:text-primary
-                hover:bg-white
-                lg:min-w-[75px] 
-                lg:text-base
-                xl:min-w-[120px]
-                xl:text-xl;
-                .products-medium-1 & {
-                    @apply  md:min-w-[200px] md:px-8 md:py-5 md:text-2xl lg:min-w-[200px] lg:text-2xl xl:min-w-[200px] xl:text-3xl;
-                }
-                .products-medium-2 & {
-                    @apply md:min-w-[110px] md:px-6 md:text-lg lg:min-w-[120px] lg:text-xl xl:min-w-[150px] xl:text-2xl;
-                }
-                .products-large-1 & {
-                    @apply lg:min-w-[200px] lg:text-2xl xl:min-w-[200px] xl:text-3xl;
-                }
-                .products-large-2 & {
-                    @apply lg:min-w-[120px] lg:text-xl xl:min-w-[150px] xl:text-2xl;
-                }
-                .products-large-3 & {
-                    @apply lg:min-w-[75px] lg:text-base xl:min-w-[120px] xl:text-xl;
-                }
-                .products-extra-large-1 & {
-                    @apply xl:min-w-[200px] xl:text-3xl;
-                }
-                .products-extra-large-2 & {
-                    @apply xl:min-w-[150px] xl:text-2xl;
-                }
-                .products-extra-large-3 & {
-                    @apply xl:min-w-[120px] xl:text-xl;
-                }
+                @apply border inline-block duration-500 mx-1 py-3 px-6
+                text-xs text-white text-center transition-all hover:text-primary hover:bg-white;
             }
-        }    
+        }
+        .small & {
+            &__sub-title { @apply leading-none text-xs; }
+            &__title { @apply leading-normal text-lg; }
+            &__sizes {
+                &__title { @apply text-xs; }
+                &__size { @apply py-2 px-5 text-xs; }
+            }
+        }
+        .medium & {
+            &__sub-title { @apply text-base; }
+            &__title { @apply text-2xl; }
+            &__sizes {
+                &__title { @apply mb-3 text-base; }
+                &__size { @apply mx-2 py-3 px-8 text-base; }
+            }
+        }
+        .large & {
+            &__sub-title { @apply text-2xl; }
+            &__title { @apply text-4xl; }
+            &__sizes {
+                &__title { @apply mb-5 text-2xl; }
+                &__size { @apply py-8 px-16 text-2xl; }
+            }
+        }
+        .extra-large & {
+            &__sub-title { @apply text-3xl; }
+            &__title { @apply text-5xl; }
+            &__sizes {
+                &__title { @apply mb-5 text-3xl; }
+                &__size { @apply mx-4 py-8 px-16 text-3xl; }
+            }
+        }
+        @screen md {
+            .products-column-medium-3 & {
+                @apply small;
+            }
+            .products-column-medium-2 & {
+                @apply medium;
+            }
+            .products-column-medium-1 & {
+                @apply large;
+            }
+            .products-row-medium-1 & {
+                @apply max-w-[28vw] small;
+            }
+            .products-row-medium-2 & {
+                @apply max-w-[44vw] medium;
+            }
+            .products-row-medium-3 & {
+                @apply max-w-[100vw] large;
+            }
+        }
+        @screen lg {
+            .products-column-large-3 & {
+                @apply small;
+            }
+            .products-column-large-2 & {
+                @apply medium;
+            }
+            .products-column-large-1 & {
+                @apply large;
+            }
+            .products-row-large-1 & {
+                @apply max-w-[28vw] small;
+            }
+            .products-row-large-2 & {
+                @apply max-w-[44vw] medium;
+            }
+            .products-row-large-3 & {
+                @apply max-w-[100vw] large;
+            }
+        }
+        @screen xl {
+            .products-column-extra-large-3 & {
+                @apply medium;
+            }
+            .products-column-extra-large-2 & {
+                @apply large;
+            }
+            .products-column-extra-large-1 & {
+                @apply extra-large;
+            }
+            .products-row-extra-large-1 & {
+                @apply max-w-[30vw] small;
+            }
+            .products-row-extra-large-2 & {
+                @apply max-w-[47vw] large;
+            }
+            .products-row-extra-large-3 & {
+                @apply max-w-[100vw] extra-large;
+            }
+        }
     }
+    
     &--with-cta {
         @apply
         relative;
@@ -185,107 +127,19 @@
             h-full
             right-[10%]
             top-0
-            w-[40%]
-            md:right-[6%]
-            md:w-[42%]
-            lg:w-[40%]
-            lg:right-[8%]
-            xl:w-[42%]
-            xl:right-[6%];
-            .products-medium-1 & {
-                @apply md:w-[36%] md:right-[10%];
-            }
-            .products-medium-2 & {
-                @apply md:w-[40%] md:right-[8%];
-            }
-            .products-large-1 & {
-                @apply lg:w-[40%] lg:right-[10%];
-            }
-            .products-large-2 & {
-                @apply lg:w-[38%] lg:right-[10%];
-            }
-            .products-large-3 & {
-                @apply lg:w-[38%] lg:right-[10%];
-            }
-            .products-extra-large-1 & {
-                @apply xl:w-[38%] xl:right-[9%];
-            }
-            .products-extra-large-2 & {
-                @apply xl:w-[40%] xl:right-[8%];
-            }
-            .products-extra-large-3 & {
-                @apply xl:w-[42%] xl:right-[6%];
-            }
+            w-[40%];
         }
         &__title {
             @apply
             leading-normal
             mb-2
-            text-lg
-            md:leading-4
-            md:text-sm
-            lg:text-base
-            lg:mb-3
-            lg:leading-normal
-            xl:text-[1.7rem];
-            .products-medium-1 & {
-                @apply md:text-4xl md:mb-6 md:leading-normal lg:text-6xl lg:leading-tight xl:text-6xl xl:leading-normal;
-            }
-            .products-medium-2 & {
-                @apply md:text-xl lg:text-2xl lg:mb-3 xl:leading-normal xl:text-3xl;
-            }
-            .products-large-1 & {
-                @apply lg:text-6xl lg:leading-tight xl:text-6xl xl:leading-normal;
-            }
-            .products-large-2 & {
-                @apply lg:text-2xl lg:mb-3 xl:leading-normal xl:text-[1.7rem];
-            }
-            .products-large-3 & {
-                @apply lg:text-base lg:mb-3 lg:leading-normal xl:text-lg;
-            }
-            .products-extra-large-1 & {
-                @apply xl:text-6xl xl:leading-normal;
-            }
-            .products-extra-large-2 & {
-                @apply xl:text-3xl;
-            }
-            .products-extra-large-3 & {
-                @apply xl:text-[1.7rem];
-            }
+            text-lg;
         }
         &__sub-title {
             @apply
             leading-normal
             text-secondary
-            text-base
-            md:text-xs
-            lg:text-xs
-            xl:text-base
-            xl:leading-normal;
-            .products-medium-1 & {
-                @apply md:text-2xl md:leading-relaxed lg:text-3xl xl:text-3xl;
-            }
-            .products-medium-2 & {
-                @apply md:text-sm lg:text-lg xl:text-xl xl:leading-relaxed;
-            }
-            .products-large-1 & {
-                @apply lg:text-3xl lg:leading-relaxed xl:text-3xl;
-            }
-            .products-large-2 & {
-                @apply lg:text-lg xl:text-xl xl:leading-relaxed;
-            }
-            .products-large-3 & {
-                @apply lg:text-xs xl:text-base xl:leading-normal;
-            }
-            .products-extra-large-1 & {
-                @apply xl:text-3xl xl:leading-relaxed;
-            }
-            .products-extra-large-2 & {
-                @apply xl:text-xl xl:leading-relaxed;
-            }
-            .products-extra-large-3 & {
-                @apply xl:text-base xl:leading-normal;
-            }
+            text-sm;
         }
         &__cta {
             @apply
@@ -293,39 +147,187 @@
             font-family-bold
             items-end
             justify-end
-            text-base
-            underline
+            text-sm
             mt-4
-            w-full
-            md:text-xs
-            md:mt-5
-            lg:text-base
-            lg:mt-6
-            xl:text-base
-            xl:mt-6;
-            .products-medium-1 & {
-                @apply md:text-2xl md:mt-24 lg:text-3xl lg:mt-24 xl:text-3xl xl:mt-32;
+            underline
+            w-full;
+        }
+        .small & {
+            &__details {
+                @apply right-[6%] w-[43%];
             }
-            .products-medium-2 & {
-                @apply md:text-sm md:mt-10 lg:text-lg lg:mt-12 xl:text-xl xl:mt-14;
+            &__title {
+                @apply mb-2 leading-tight text-sm;
             }
-            .products-large-1 & {
-                @apply lg:text-3xl lg:mt-24 xl:text-3xl xl:mt-32;
+            &__sub-title {
+                @apply text-[10px];
             }
-            .products-large-2 & {
-                @apply lg:text-lg lg:mt-12 xl:text-xl xl:mt-14;
+            &__cta {
+                @apply mt-4 text-[10px];  
             }
-            .products-large-3 & {
-                @apply lg:text-xs lg:mt-8 xl:text-base xl:mt-8;
+        }
+        .small-2 & {
+            &__details {
+                @apply right-[7%] w-[42%];
             }
-            .products-extra-large-1 & {
-                @apply xl:text-3xl xl:mt-32;
+            &__title {
+                @apply mb-3 leading-snug text-lg;
             }
-            .products-extra-large-2 & {
-                @apply xl:text-xl xl:mt-14;
+            &__cta {
+                @apply mt-7;
             }
-            .products-extra-large-3 & {
-                @apply xl:text-base xl:mt-6;
+        }
+        .medium & {
+            &__details {
+                @apply right-[8%] w-[40%];
+            }
+            &__title {
+                @apply mb-3 leading-snug text-xl;
+            }
+            &__sub-title {
+                @apply text-sm;
+            }
+            &__cta {
+                @apply text-sm mt-8;
+            }
+        }
+        .medium-2 & {
+            &__details {
+                @apply right-[10%] w-[36%];
+            }
+            &__title {
+                @apply text-2xl;
+            }
+            &__sub-title {
+                @apply text-base;
+            }
+            &__cta {
+                @apply text-base mt-12;
+            }
+        }
+        .large & {
+            &__details {
+                @apply w-[40%] right-[8%];
+            }
+            &__title {
+                @apply mb-4 leading-snug text-3xl;
+            }
+            &__sub-title {
+                @apply text-xl;
+            }
+            &__cta {
+                @apply mt-12 text-xl;
+            }
+        }
+        .large-2 & {
+            &__details {
+                @apply w-[35%] right-[10%];
+            }
+            &__sub-title {
+                @apply text-xl;
+            }
+            &__cta {
+                @apply mt-20 text-xl;
+            }
+        }
+        .extra-large & {
+            &__details {    
+                @apply right-[10%] w-[36%];
+            }
+            &__title {
+                @apply mb-6 leading-tight text-4xl;
+            }
+            &__sub-title {
+                @apply leading-normal text-2xl;
+            }
+            &__cta {
+                @apply mt-20 text-2xl;
+            }
+        }
+        .extra-large-1 & {
+            &__details {    
+                @apply right-[8%] w-[39%];
+            }
+            &__title {
+                @apply mb-6 leading-tight text-5xl;
+            }
+            &__sub-title {
+                @apply leading-normal text-3xl;
+            }
+            &__cta {
+                @apply mt-24 text-3xl;
+            }
+        }
+        @screen md {
+            .products-column-medium-3 & {
+                @apply small;
+            }
+            .products-column-medium-2 & {
+                @apply medium;
+            }
+            .products-column-medium-1 & {
+                @apply large large-2;
+            }
+            .products-row-medium-1 & {
+                @apply max-w-[33vw] small;
+            }
+            .products-row-medium-2 & {
+                @apply max-w-[50vw] medium;
+            }
+            .products-row-medium-3 & {
+                @apply max-w-[70vw] large;
+            }
+            .products-row-medium-4 & {
+                @apply max-w-[100vw] extra-large;
+            }
+        }
+        @screen lg {
+            .products-column-large-3 & {
+                @apply small small-2;
+            }
+            .products-column-large-2 & {
+                @apply medium medium-2;
+            }
+            .products-column-large-1 & {
+                @apply extra-large;
+            }
+            .products-row-large-1 & {
+                @apply max-w-[33vw] small;
+            }
+            .products-row-large-2 & {
+                @apply max-w-[50vw] medium;
+            }
+            .products-row-large-3 & {
+                @apply max-w-[70vw] large;
+            }
+            .products-row-large-4 & {
+                @apply max-w-[100vw] extra-large-1;
+            }
+        }
+        @screen xl {
+            .products-column-extra-large-3 & {
+                @apply medium;
+            }
+            .products-column-extra-large-2 & {
+                @apply large;
+            }
+            .products-column-extra-large-1 & {
+                @apply extra-large-1;
+            }
+            .products-row-extra-large-1 & {
+                @apply max-w-[30%] medium;
+            }
+            .products-row-extra-large-2 & {
+                @apply max-w-[50%] large;
+            }
+            .products-row-extra-large-3 & {
+                @apply max-w-[70%] extra-large;
+            }
+            .products-row-extra-large-4 & {
+                @apply max-w-[100%] extra-large-1;
+            }
+            .products-row-extra-large-4 & &__details {
+                @apply right-[10%] w-[35%];
             }
         }
     }

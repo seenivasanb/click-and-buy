@@ -10,10 +10,11 @@
     shadow-slate-200;
     &__logo {
         @apply
+        font-family-bold
         tracking-tight
         text-3xl;
         span {
-            @apply font-thin
+            @apply font-family-regular text-peach
         }
     }
     &__nav-bar {

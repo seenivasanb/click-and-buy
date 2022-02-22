@@ -72,8 +72,9 @@ export default memo(() => {
         <h2>Recommended Products</h2>
         <ProductListComponent
           category={ProductCategoryType.productWithSize}
-          products={PRODUCTS.slice(2)}
-          noOfColumns={{ medium: 1 }} />
+          products={PRODUCTS.slice(0, 3)}
+          direction="row"
+        />
       </div>
     </div>
   )
