@@ -1,0 +1,108 @@
+.ocp-wrp {
+  @apply
+  mx-[-15px];
+  &__main-column,
+  &__sidebar {
+    @apply
+    md:float-left
+    my-[40px]
+    px-[15px];
+    h2 {
+      @apply
+      mb-[20px]
+      relative
+      text-center;
+      &::after {
+        @apply
+        absolute
+        block
+        border-b-[6px]
+        border-b-peach
+        content-[""]
+        left-1/2
+        translate-x-[-50%]
+        w-[50px];
+      }
+    }
+  }
+  &__main-column {
+    @apply
+    md:text-center
+    md:w-3/4;
+  }
+  &__sidebar {
+    @apply md:w-1/4;
+  }
+  .order-confirmation {
+    @apply
+    mb-[30px];
+    h2::after {
+      @apply
+      content-none;
+    }
+  }
+  .product-list {
+    @apply
+    min-w-[340px]
+    mx-auto
+    my-[15px]
+    text-center;
+    &__item {
+      @apply
+      bg-neutral-100
+      border-b-2
+      border-b-white;
+    }
+    &__data {
+      @apply
+      md:w-1/5
+      p-[15px];
+    }
+    &__data--img {
+      @apply
+      max-w-[150px];
+    }
+  }
+  .summary {
+    &__detail {
+      @apply
+      float-left
+      text-left
+      w-1/2;
+    }
+    &__detail--right {
+      @apply
+      float-right
+      max-w-[335px];
+    }
+  }
+  .continue-shopping {
+    @apply
+    mx-auto
+    my-[50px]
+    w-fit;
+    &__btn {
+      @apply
+      bg-primary
+      px-[60px]
+      py-[10px]
+      relative
+      text-white;
+      &::after {
+        @apply
+        absolute
+        block
+        border-2
+        border-primary
+        content-[""]
+        h-[44px]
+        left-0
+        pointer-events-none
+        top-0
+        translate-x-[8px]
+        translate-y-[8px]
+        w-[238px];
+      }
+    }
+  }
+}
