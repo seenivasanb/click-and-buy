@@ -2,11 +2,14 @@
 .new-arrivals {
     @apply
     mb-10
-    md:mb-16;
+    md:mb-20
+    lg:mb-32
+    xl:mb-40;
     &__title {
         @apply
         after:block
-        after:my-4
+        after:mt-4
+        after:mb-10
         after:h-[6px]
         after:text-center
         after:w-[50px]
@@ -14,12 +17,13 @@
         flex
         flex-col
         items-center
-        lg:text-6xl
-        lg:after:my-8
-        md:py-4
-        md:after:my-6
-        md:text-4xl
         py-2
         text-2xl
+        md:py-4
+        md:after:mt-8
+        md:after:mb-16
+        md:text-4xl
+        lg:text-5xl
+        lg:after:mt-10
     }
 }

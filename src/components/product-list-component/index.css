@@ -3,58 +3,68 @@
     grid
     sm:gap-6
     md:gap-8
-    xl:gap-14
-    sm:grid-cols-3;
-    &.products-medium-1 {
-        @apply md:grid-cols-1;
-    }
-    &.products-medium-2 {
-        @apply md:grid-cols-2;
-    }
-    &.products-medium-3 {
-        @apply md:grid-cols-3;
-    }
-    &.products-large-1 {
-        @apply lg:grid-cols-1;
-    }
-    &.products-large-2 {
-        @apply lg:grid-cols-2;
-    }
-    &.products-large-3 {
-        @apply lg:grid-cols-3;
-    }
-    &.products-extra-large-1 {
-        @apply xl:grid-cols-1;
-    }
-    &.products-extra-large-2 {
-        @apply xl:grid-cols-2;
-    }
-    &.products-extra-large-3 {
-        @apply xl:grid-cols-3;
-    }
+    xl:gap-14;
     &--product-with-cta {
         @apply
         grid
         sm:gap-2
         lg:gap-6
         xl:gap-8;
-        &.products-medium-1 {
+        &.products-column-medium-1 {
             @apply md:gap-8;
         }
-        &.products-medium-2 {
+        &.products-column-medium-2 {
             @apply md:gap-6;
         }
-        &.products-large-1 {
+        &.products-column-large-1 {
             @apply lg:gap-14;
         }
-        &.products-large-2 {
+        &.products-column-large-2 {
             @apply lg:gap-8;
         }
-        &.products-extra-large-2 {
+        &.products-column-extra-large-2 {
             @apply xl:gap-10;
         }
-        &.products-extra-large-3 {
+        &.products-column-extra-large-3 {
             @apply xl:gap-6;
         }
+    }
+    &.products-column-medium-1 {
+        @apply md:grid-cols-1;
+    }
+    &.products-column-medium-2 {
+        @apply md:grid-cols-2;
+    }
+    &.products-column-medium-3 {
+        @apply md:grid-cols-3;
+    }
+    &.products-column-large-1 {
+        @apply lg:grid-cols-1;
+    }
+    &.products-column-large-2 {
+        @apply lg:grid-cols-2;
+    }
+    &.products-column-large-3 {
+        @apply lg:grid-cols-3;
+    }
+    &.products-column-extra-large-1 {
+        @apply xl:grid-cols-1;
+    }
+    &.products-column-extra-large-2 {
+        @apply xl:grid-cols-2;
+    }
+    &.products-column-extra-large-3 {
+        @apply xl:grid-cols-3;
+    }
+    &.products-row-medium-1,
+    &.products-row-medium-2,
+    &.products-row-medium-3,
+    &.products-row-large-1,
+    &.products-row-large-2,
+    &.products-row-large-3,
+    &.products-row-extra-large-1,
+    &.products-row-extra-large-2,
+    &.products-row-extra-large-3 {
+        @apply grid-rows-1 grid-flow-row;
     }
 }

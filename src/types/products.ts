@@ -12,8 +12,24 @@ export enum ProductCategoryType {
     productTwoColumns = "product-two-columns",
 }
 
-export type ProductListNoOfColumnsType = {
-    medium?: number,
-    large?: number,
-    extraLarge?: number
+export type ProductWithSizeResponsiveType = {
+    medium?: 1 | 2 | 3,
+    large?: 1 | 2 | 3,
+    extraLarge?: 1 | 2 | 3
+}
+
+export type ProductWithCTAResponsiveType = {
+    medium?: 1 | 2 | 3 | 4,
+    large?: 1 | 2 | 3 | 4,
+    extraLarge?: 1 | 2 | 3 | 4
+}
+
+export type ProductWithSizeLayoutType = {
+    category: ProductCategoryType.productWithSize,
+    responsive?: ProductWithSizeResponsiveType
+}
+
+export type ProductWithCTALayoutType = {
+    category: ProductCategoryType.productWithCTA,
+    responsive?: ProductWithCTAResponsiveType
 }

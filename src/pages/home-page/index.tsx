@@ -12,7 +12,9 @@ export default memo(() => {
                 <h1 className="trending-now__title">Trending now</h1>
                 <ProductListComponent
                     category={ProductCategoryType.productWithSize}
-                    products={PRODUCTS.slice(0, 3)} />
+                    direction="column"
+                    products={PRODUCTS}
+                />
             </section>
 
             <section className="new-arrivals">
@@ -20,7 +22,9 @@ export default memo(() => {
                 <ProductListComponent
                     category={ProductCategoryType.productWithCTA}
                     products={PRODUCTS_TILES}
-                    noOfColumns={{ medium: 3, large: 2 }} />
+                    direction="column"
+                    responsive={{ medium: 2, large: 2, extraLarge: 2 }}
+                />
             </section>
         </Fragment>
     )
