@@ -44,3 +44,52 @@ body {
         w-full
     }
 }
+
+/* button primary */
+.button-primary {
+    @apply 
+    bg-primary
+    cursor-pointer
+    duration-1000
+    font-family-bold
+    focus:outline-none
+    overflow-hidden
+    p-4
+    px-10
+    relative
+    shadow-lg
+    shadow-primary/70
+    text-white
+    tracking-widest
+    transition-all
+    z-0;
+    &:before,
+    &::after {
+        @apply
+        content-[""]
+        absolute
+        bg-peach
+        duration-1000
+        h-[150px]
+        rotate-45
+        transition-all
+        w-[150px]
+        -z-10;
+    }
+    &::before {
+        @apply left-full top-[50%];
+    }
+    &::after {
+        @apply bg-peach right-full -top-[220%];
+    }
+    &:hover,
+    &:focus {
+        @apply shadow-peach/70 outline-none;
+        &:before {
+            @apply translate-x-[-65%] translate-y-[-30%] rotate-90;
+        }
+        &::after {
+            @apply translate-x-[65%] translate-y-[30%] rotate-90;
+        }
+    }
+}
