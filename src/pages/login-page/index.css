@@ -1,5 +1,12 @@
 .login {
+    @apply flex flex-col items-center;
+    &__header {
+        @apply mb-10;
+    }
+    &__form {
+        @apply min-w-full md:min-w-[500px];
+    }
     &__link {
-        @apply underline underline-offset-1;
+        @apply mt-10 underline underline-offset-1;
     }
 }

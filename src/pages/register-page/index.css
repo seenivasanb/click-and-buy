@@ -1,5 +1,31 @@
 .register {
+    @apply flex flex-col items-center;
+    &__header {
+        @apply mb-10;
+    }
+    &__form {
+        @apply min-w-full md:min-w-[500px];
+        &__fieldset {
+            @apply mb-8 relative;
+            .label {
+                @apply absolute bg-white pointer-events-none leading-none px-4 left-2 transition-all duration-300 top-5;
+            }
+            .textbox {
+                @apply border border-slate-300 cursor-pointer outline-none p-5 py-4 w-full;
+                &:focus,
+                &:not(:placeholder-shown),
+                &.filled {
+                    & + .label {
+                        @apply px-2 text-xs left-4 -top-3;
+                    }
+                }
+            }
+            .error {
+                @apply absolute bg-white -bottom-0 mt-2 px-2 right-4 leading-none text-red-500 text-xs;
+            }
+        }
+    }
     &__link {
-        @apply underline underline-offset-1;
+        @apply mt-10 underline underline-offset-1;
     }
 }
