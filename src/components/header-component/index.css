@@ -1,13 +1,18 @@
 .header {
     @apply
-    text-primary
+    bg-white
+    duration-500
+    fixed
     flex
     items-center
     justify-between
     py-2
     px-6
     shadow-md
-    shadow-slate-200;
+    shadow-slate-200
+    text-primary
+    w-full
+    z-50;
     &__logo {
         @apply
         font-family-bold
@@ -19,12 +24,151 @@
     }
     &__nav-bar {
         @apply
+        absolute
         flex
-        font-family-bold;
+        flex-col
+        font-family-bold
+        -left-full
+        top-[103%]
+        transition-all
+        w-full
+        z-40;
         &__link {
             @apply
-            hover:text-cyan-600
-            mx-4
+            hover:text-peach
+            bg-white
+            border
+            duration-500
+            p-6
+            py-3
+            relative
+            transition-all
+            -left-full
+            md:mx-4;
+            &:nth-child(1) {
+                @apply delay-[400ms];
+            }
+            &:nth-child(2) {
+                @apply delay-[350ms];
+            }
+            &:nth-child(3) {
+                @apply delay-[300ms];
+            }
+            &:nth-child(4) {
+                @apply delay-[250ms];
+            }
+            &:nth-child(5) {
+                @apply delay-[200ms];
+            }
+            &:nth-child(6) {
+                @apply delay-[150ms];
+            }
+            &:nth-child(7) {
+                @apply delay-[150ms];
+            }
+            &:nth-child(8) {
+                @apply delay-[100ms];
+            }
+            &:nth-child(9) {
+                @apply delay-[50ms];
+            }
+            &:last-child {
+                @apply shadow-md;
+            }
+        }
+    }
+    &__hamburger-icon{
+        @apply relative w-6 h-4 md:hidden;
+        &__close {
+            @apply absolute left-0 top-[7px] bg-primary w-full h-[2px];
+        }
+        &::before,
+        &::after {
+            @apply content-[""] absolute bg-primary left-0 w-full h-[2px] transition-all duration-300;
+        }
+        &::before {
+            @apply top-0;
+        }
+        &::after {
+            @apply bottom-0;
+        }
+    }
+    &.hide-nav-bar {
+        .header {
+            &__nav-bar {
+                @apply -left-full delay-1000;
+                &__link {
+                    @apply -left-full;
+                }
+            }
+        }
+    }
+    &.show-nav-bar {
+        .header {
+            &__hamburger-icon {
+                &__close {
+                    @apply hidden;
+                }
+                &::before,
+                &::after {
+                    @apply w-[90%]
+                }
+                &::before {
+                    @apply rotate-45 translate-x-[2px] translate-y-[7px] origin-center;
+                }
+                &::after {
+                    @apply -rotate-45 translate-x-[2px] -translate-y-[7px] origin-center;
+                }
+            }
+            &__nav-bar {
+                @apply top-[103%] left-0;
+                &__link {
+                    @apply left-0 bg-slate-50;
+                    &:nth-child(1) {
+                        @apply delay-[50ms];
+                    }
+                    &:nth-child(2) {
+                        @apply delay-[50ms];
+                    }
+                    &:nth-child(3) {
+                        @apply delay-[100ms];
+                    }
+                    &:nth-child(3) {
+                        @apply delay-[150ms];
+                    }
+                    &:nth-child(4) {
+                        @apply delay-[200ms];
+                    }
+                    &:nth-child(5) {
+                        @apply delay-[250ms];
+                    }
+                    &:nth-child(6) {
+                        @apply delay-[300ms];
+                    }
+                    &:nth-child(7) {
+                        @apply delay-[350ms];
+                    }
+                    &:nth-child(8) {
+                        @apply delay-[400ms];
+                    }        
+                }
+            }
+        }
+    }
+    @screen md {
+        &.show-nav-bar,
+        &.hide-nav-bar {
+            .header {
+                &__nav-bar {
+                    @apply relative shadow-none flex flex-row top-0 w-fit;
+                    &__link {
+                        @apply border-0 p-0 left-0 delay-[0ms] duration-300;
+                        &:last-child {
+                            @apply shadow-none;
+                        }
+                    }
+                }
+            }   
         }
     }
 }
