@@ -1,6 +1,7 @@
 .wrapper {
     @apply
     p-5
+    pt-16
     md:container
     md:mx-auto
     md:p-8
