@@ -1,8 +1,8 @@
 import React, { Fragment, memo } from "react"
 import "./index.css";
-import { ProductListComponent } from "../../components";
-import { PRODUCTS, PRODUCTS_TILES } from "../../mock-data/products";
-import { ProductCategoryType } from "../../types/products";
+import { ProductListComponent } from "components";
+import { PRODUCTS, PRODUCTS_TILES } from "mock-data/products";
+import { ProductCategoryType } from "types/products";
 
 export default memo(() => {
     console.log("Home Page");

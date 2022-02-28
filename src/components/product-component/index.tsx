@@ -1,8 +1,8 @@
-import { ASSETS_PATH } from "../../configuration/variables";
+import { ASSETS_PATH } from "configuration/variables";
 import React, { Fragment, memo } from 'react'
 import "./index.css"
 import { Link } from "react-router-dom";
-import { ProductCategoryType, ProductType } from "../../types/products";
+import { ProductCategoryType, ProductType } from "types/products";
 
 type Props = {
     category: ProductCategoryType,

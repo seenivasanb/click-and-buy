@@ -1,9 +1,9 @@
+import { ProductListComponent } from "components"
+import { ASSETS_PATH } from "configuration/variables"
+import { PRODUCTS } from "mock-data/products"
 import React, { memo } from "react"
+import { ProductCategoryType } from "types/products"
 import "./index.css"
-import { ASSETS_PATH } from "../../configuration/variables";
-import { ProductListComponent } from "../../components";
-import { PRODUCTS } from "../../mock-data/products";
-import { ProductCategoryType } from "../../types/products";
 
 export default memo(() => {
   return (

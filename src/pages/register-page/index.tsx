@@ -1,7 +1,7 @@
+import { RegisterForm } from "forms";
 import React, { memo } from "react"
 import { Link } from "react-router-dom"
 import "./index.css"
-import { RegisterForm } from "../../forms"
 
 export default memo(() => {
     console.log("Register Page");

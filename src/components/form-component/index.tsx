@@ -1,7 +1,7 @@
-import { FormInput } from "../../components";
+import { FormInput } from "components";
 import React from 'react'
 import { useForm } from "react-hook-form";
-import { FormInputType } from "../../types/form-types";
+import { FormInputType } from "types/form-types";
 
 type FormProps<TFormValues> = {
     onSubmit: (data: any) => void,
