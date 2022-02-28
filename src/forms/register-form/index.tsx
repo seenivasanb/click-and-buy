@@ -1,5 +1,5 @@
-import { FormComponent } from "../../components";
-import React, { useCallback, useRef, useState } from "react"
+import { FormComponent } from "components";
+import React, { useCallback, useState } from "react"
 import { FormInputType } from "types/form-types";
 import PasswordStrengthTooltip from "./password-strength";
 import "./password-strength.css";

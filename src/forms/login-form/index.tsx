@@ -1,4 +1,4 @@
-import { FormComponent } from "../../components";
+import { FormComponent } from "components";
 import React, { useCallback } from "react"
 import { FormInputType } from "types/form-types";
 

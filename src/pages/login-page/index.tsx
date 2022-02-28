@@ -1,7 +1,6 @@
+import { LoginForm } from "forms"
 import React, { memo } from "react"
 import { Link } from "react-router-dom"
-import "./index.css"
-import { LoginForm } from "../../forms"
 import "./index.css"
 
 export default memo(() => {

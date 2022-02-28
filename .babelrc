@@ -12,7 +12,13 @@
         "root": [
           "."
         ],
-        "alias": {}
+        "alias": {
+          "configuration": "./src/configuration",
+          "components": "./src/components",
+          "forms": "./src/forms",
+          "mock-data": "./src/mock-data",
+          "types": "./src/types"
+        }
       }
     ]
   ]

@@ -1,6 +1,6 @@
 import React from 'react'
-import { ProductWithCTALayoutType, ProductWithSizeLayoutType, ProductType } from "../../types/products";
-import { ProductComponent } from "../../components";
+import { ProductWithCTALayoutType, ProductWithSizeLayoutType, ProductType } from "types/products";
+import { ProductComponent } from "components";
 import "./index.css"
 
 type Props = {
