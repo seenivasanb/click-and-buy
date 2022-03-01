@@ -36,9 +36,10 @@
         &__link {
             @apply
             hover:text-peach
-            bg-white
+            bg-slate-50
             border
             duration-500
+            opacity-0
             p-6
             py-3
             relative
@@ -123,7 +124,7 @@
             &__nav-bar {
                 @apply top-[103%] left-0;
                 &__link {
-                    @apply left-0 bg-slate-50;
+                    @apply left-0 opacity-100;
                     &:nth-child(1) {
                         @apply delay-[50ms];
                     }
@@ -160,9 +161,9 @@
         &.hide-nav-bar {
             .header {
                 &__nav-bar {
-                    @apply relative shadow-none flex flex-row top-0 w-fit;
+                    @apply relative shadow-none flex flex-row left-0 top-0 w-fit;
                     &__link {
-                        @apply border-0 p-0 left-0 delay-[0ms] duration-300;
+                        @apply border-0 bg-white delay-[0ms] p-0 left-0 opacity-100 duration-300;
                         &:last-child {
                             @apply shadow-none;
                         }
