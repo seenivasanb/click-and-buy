@@ -23,7 +23,7 @@ export default memo(() => {
 
     const loginOnSubmit = useCallback((data: any) => {
         setValidSteps(value => [...value, 1]);
-        // alert(JSON.stringify(data, null, 2));
+        alert(JSON.stringify(data, null, 2));
     }, [validSteps, activeStepNumber]);
 
     const registerOnSubmit = useCallback((data: any) => {
