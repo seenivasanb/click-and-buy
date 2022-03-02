@@ -1,5 +1,5 @@
 .register {
-    @apply flex flex-col items-center;
+    @apply flex flex-col items-center mb-16;
     &__header {
         @apply mb-10;
     }
@@ -26,6 +26,9 @@
         }
     }
     &__link {
-        @apply mt-10 underline underline-offset-1;
+        @apply font-family-bold underline underline-offset-1;
+    }
+    .link-text {
+        @apply mt-14;
     }
 }
