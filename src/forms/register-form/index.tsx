@@ -1,10 +1,10 @@
 import { FormComponent } from "components";
-import React, { useCallback, useState } from "react"
+import React, { memo, useCallback, useState } from "react"
 import { FormInputType } from "types/form-types";
 import PasswordStrengthTooltip from "./password-strength";
 import "./password-strength.css";
 
-const RegisterForm = (): JSX.Element => {
+export default memo(({ formName, onSubmit, submitButtonName }: any): JSX.Element => {
 
     const [passwordValue, setPasswordValue] = useState("");
     const [isPasswordStrengthPopupVisible, setPasswordStrengthPopupVisible] = useState(false);
@@ -16,10 +16,6 @@ const RegisterForm = (): JSX.Element => {
     const hidePasswordStrengthPopup = useCallback(() => {
         setPasswordStrengthPopupVisible(false);
     }, [isPasswordStrengthPopupVisible]);
-
-    const onSubmit = useCallback((data: any) => {
-        alert(JSON.stringify(data, null, 2));
-    }, []);
 
     const formFields: FormInputType<Record<string, unknown>>[] = [
         {
@@ -80,13 +76,11 @@ const RegisterForm = (): JSX.Element => {
     return (
         <div>
             <FormComponent
-                formName="register-form"
+                formName={formName}
                 onSubmit={onSubmit}
                 formFields={formFields}
-                submitButtonClassName={"Register Me"}
+                submitButtonName={submitButtonName}
             />
         </div>
     );
-}
-
-export default RegisterForm;
+});
