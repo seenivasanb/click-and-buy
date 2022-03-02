@@ -12,18 +12,20 @@ export default memo(() => {
 
     return (
         <header className={`header ${isNavBarVisible ? "show-nav-bar" : "hide-nav-bar"}`}>
-            <div className="header__logo">Click<span>&</span>Buy</div>
-            <div className="header__hamburger-icon" onClick={toggleHamburgerMenu}>
-                <span className="header__hamburger-icon__close"></span>
+            <div className="wrapper">
+                <div className="header__logo">Click<span>&</span>Buy</div>
+                <div className="header__hamburger-icon" onClick={toggleHamburgerMenu}>
+                    <span className="header__hamburger-icon__close"></span>
+                </div>
+                <nav className="header__nav-bar" onClick={toggleHamburgerMenu}>
+                    <Link className="header__nav-bar__link" to="/">Home</Link>
+                    <Link className="header__nav-bar__link" to="/spp">SPP</Link>
+                    <Link className="header__nav-bar__link" to="/checkout">Checkout</Link>
+                    <Link className="header__nav-bar__link" to="/order-confirm">Order Confirm</Link>
+                    <Link className="header__nav-bar__link" to="/login">Login</Link>
+                    <Link className="header__nav-bar__link" to="/register">Register</Link>
+                </nav>
             </div>
-            <nav className="header__nav-bar" onClick={toggleHamburgerMenu}>
-                <Link className="header__nav-bar__link" to="/">Home</Link>
-                <Link className="header__nav-bar__link" to="/spp">SPP</Link>
-                <Link className="header__nav-bar__link" to="/checkout">Checkout</Link>
-                <Link className="header__nav-bar__link" to="/order-confirm">Order Confirm</Link>
-                <Link className="header__nav-bar__link" to="/login">Login</Link>
-                <Link className="header__nav-bar__link" to="/register">Register</Link>
-            </nav>
         </header>
     )
 })

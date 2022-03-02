@@ -1,6 +1,6 @@
-import { memo } from "react";
-import Login from "./login-form";
-import Register from "./register-form";
+import { lazy } from "react";
 
-export const LoginForm = memo(Login);
-export const RegisterForm = memo(Register);
+export const LoginForm = lazy(() => import("./login-form"));
+export const RegisterForm = lazy(() => import("./register-form"));
+export const ShippingForm = lazy(() => import("./shipping-form"));
+export const PaymentForm = lazy(() => import("./payment-form"));

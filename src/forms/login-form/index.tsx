@@ -1,12 +1,8 @@
 import { FormComponent } from "components";
-import React, { useCallback } from "react"
+import React, { memo } from "react"
 import { FormInputType } from "types/form-types";
 
-export default () => {
-
-    const onSubmit = useCallback((data: any) => {
-        alert(JSON.stringify(data, null, 2));
-    }, []);
+export default memo(({ formName, onSubmit, submitButtonName }: any) => {
 
     const LoginFormFields: FormInputType<Record<string, unknown>>[] = [
         {
@@ -29,10 +25,10 @@ export default () => {
 
     return (
         <FormComponent
-            formName="login-form"
+            formName={formName}
             onSubmit={onSubmit}
             formFields={LoginFormFields}
-            submitButtonClassName={"Login Me"}
+            submitButtonName={submitButtonName}
         />
     );
-}
+});

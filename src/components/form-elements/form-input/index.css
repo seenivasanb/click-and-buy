@@ -1,5 +1,5 @@
 .fieldset {
-    @apply mb-8 relative;
+    @apply mb-6 md:mb-8 relative;
     .label {
         @apply absolute bg-white pointer-events-none leading-none px-4 left-2 transition-all duration-300 top-5;
     }

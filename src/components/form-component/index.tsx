@@ -7,11 +7,11 @@ type FormProps<TFormValues> = {
     onSubmit: (data: any) => void,
     formFields?: FormInputType<TFormValues>[],
     formName: string,
-    submitButtonClassName?: string
+    submitButtonName?: string
 }
 
 export default <TFormValues extends Record<string, unknown>>({
-    formFields, formName, onSubmit, submitButtonClassName
+    formFields, formName, onSubmit, submitButtonName
 }: FormProps<TFormValues>) => {
     const {
         register,
@@ -25,7 +25,7 @@ export default <TFormValues extends Record<string, unknown>>({
                 const fieldName = `${formName}-${field.name}`;
                 return <FormInput {...field} key={fieldName} id={fieldName} register={register} error={errors[field.name]} />
             })}
-            <button type="submit" className="button-primary">{submitButtonClassName ? submitButtonClassName : "Submit"}</button>
+            <button type="submit" className="button-primary">{submitButtonName ? submitButtonName : "Submit"}</button>
         </form>
     )
 }
