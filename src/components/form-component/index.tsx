@@ -1,17 +1,18 @@
 import { FormInput } from "components";
 import React from 'react'
-import { useForm } from "react-hook-form";
+import { useForm, UseFormRegister } from "react-hook-form";
 import { FormInputType } from "types/form-types";
 
 type FormProps<TFormValues> = {
     onSubmit: (data: any) => void,
     formFields?: FormInputType<TFormValues>[],
     formName: string,
-    submitButtonName?: string
+    submitButtonName?: string,
+    isSubmitting?: boolean
 }
 
 export default <TFormValues extends Record<string, unknown>>({
-    formFields, formName, onSubmit, submitButtonName
+    formFields, formName, onSubmit, submitButtonName, isSubmitting
 }: FormProps<TFormValues>) => {
     const {
         register,
@@ -20,12 +21,18 @@ export default <TFormValues extends Record<string, unknown>>({
     } = useForm({ shouldUseNativeValidation: false });
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} >
             {formFields?.map((field: any) => {
                 const fieldName = `${formName}-${field.name}`;
-                return <FormInput {...field} key={fieldName} id={fieldName} register={register} error={errors[field.name]} />
-            })}
-            <button type="submit" className="button-primary">{submitButtonName ? submitButtonName : "Submit"}</button>
-        </form>
+                const error = errors[field.name] || field.error;
+                return <FormInput {...field} key={fieldName} id={fieldName} register={register} error={error} />
+            })
+            }
+            <button type="submit"
+                className={`button-primary ${isSubmitting ? "disabled" : ""}`}
+                disabled={isSubmitting}>
+                {isSubmitting ? "Loading..." : submitButtonName ? submitButtonName : "Submit"}
+            </button>
+        </form >
     )
 }

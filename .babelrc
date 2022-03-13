@@ -15,8 +15,11 @@
         "alias": {
           "configuration": "./src/configuration",
           "components": "./src/components",
+          "contexts": "./src/contexts",
           "forms": "./src/forms",
           "mock-data": "./src/mock-data",
+          "services": "./src/services",
+          "stores": "./src/stores",
           "types": "./src/types"
         }
       }

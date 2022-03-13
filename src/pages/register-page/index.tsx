@@ -1,5 +1,7 @@
+import RootContext from "contexts/root-context";
 import { RegisterForm } from "forms";
-import React, { memo, useCallback } from "react"
+import React, { memo, useCallback, useContext, useEffect } from "react"
+import { useNavigate } from "react-router";
 import { Link } from "react-router-dom"
 import "./index.css"
 
@@ -9,6 +11,13 @@ export default memo(() => {
     const registerOnSubmit = useCallback((data: any) => {
         alert(JSON.stringify(data, null, 2));
     }, []);
+
+    const navigate = useNavigate();
+    const { userStore } = useContext(RootContext);
+
+    useEffect(() => {
+        if (userStore.isUserExists) navigate("/", { replace: true });
+    }, [userStore.isUserExists]);
 
     return (
         <section className="register">
@@ -22,7 +31,6 @@ export default memo(() => {
             </div>
 
             <p className="link-text"> Already have an account? <Link className="register__link" to="/login">Login</Link></p>
-
         </section>
     )
 });

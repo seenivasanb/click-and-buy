@@ -1,14 +1,20 @@
-import React, { memo, useState } from "react"
+import RootContext from "contexts/root-context";
+import { observer } from "mobx-react-lite";
+import React, { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import "./index.css"
 
-export default memo(() => {
+export default observer(() => {
     console.log("Header Component");
     const [isNavBarVisible, setNavBarVisible] = useState(false);
 
     const toggleHamburgerMenu = () => {
         setNavBarVisible(value => value ? false : true)
     }
+
+    const { userStore } = useContext(RootContext);
+    const handleLogout = () => { userStore.onLogout(); }
+    const isUserExists = userStore.isUserExists;
 
     return (
         <header className={`header ${isNavBarVisible ? "show-nav-bar" : "hide-nav-bar"}`}>
@@ -22,8 +28,13 @@ export default memo(() => {
                     <Link className="header__nav-bar__link" to="/spp">SPP</Link>
                     <Link className="header__nav-bar__link" to="/checkout">Checkout</Link>
                     <Link className="header__nav-bar__link" to="/order-confirm">Order Confirm</Link>
-                    <Link className="header__nav-bar__link" to="/login">Login</Link>
-                    <Link className="header__nav-bar__link" to="/register">Register</Link>
+                    {isUserExists
+                        ? <Link className="header__nav-bar__link" onClick={handleLogout} to={""}>Logout</Link>
+                        : <>
+                            <Link className="header__nav-bar__link" to="/login">Login</Link>
+                            <Link className="header__nav-bar__link" to="/register">Register</Link>
+                        </>
+                    }
                 </nav>
             </div>
         </header>
