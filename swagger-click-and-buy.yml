@@ -1,0 +1,15 @@
+definitions: 
+  users: 
+    type: array
+    items: 
+      type: object
+      properties: 
+        email: 
+          type: string
+          example: seeni@mail.com
+        password: 
+          type: string
+          example: $2a$10$sGyJ1DOigUBGbPo2Vc/Ux.rGVfal3P67sfETOb5lm5a/x.6Sar5L2
+        id: 
+          type: number
+          example: 1
