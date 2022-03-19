@@ -1,176 +1,195 @@
 .header {
+  @apply
+  text-primary
+  flex
+  sm:flex-row
+  justify-between
+  items-center
+  py-2
+  px-6
+  shadow-md
+  shadow-slate-200;
+  .bars {
     @apply
-    bg-white
-    duration-500
-    fixed
-    flex
-    items-center
-    justify-between
-    shadow-md
-    shadow-slate-200
+    md:hidden
+    mr-[4px]
     text-primary
-    w-full
-    z-50;
-    .wrapper {
-        @apply w-full flex flex-row justify-between items-center py-2;
+    text-[25px]
+    w-[30px];
+    /* .bar {
+      @apply
+      bg-black
+      my-[5px]
+      h-[2px];
+    } */
+  }
+  &__logo {
+    @apply
+    tracking-tight
+    text-3xl;
+    span {
+      @apply font-thin
     }
-    &__logo {
+  }
+  &__nav-bar {
+    @apply
+    flex
+    font-family-bold;
+    &__link {
+      @apply
+      hover:text-cyan-600
+      mx-4
+    }
+    .nav-items {
+      @apply
+      mr-2
+      md:mr-4;
+      
+    }
+    &-shopping-cart {
+      width: 24px;
+    }
+    &-search-icon {
+      width: 24px;
+      @apply
+      static
+      md:absolute;
+      z-index: 5;
+    }  
+    &-search {
+      display:flex;
+    }
+    &-search-field {
+      @apply
+      flex
+      md:border-b-primary
+      md:border-b-2;
+      input {
         @apply
-        font-family-bold
-        tracking-tight
-        text-3xl;
-        span {
-            @apply font-family-regular text-peach
-        }
+        hidden
+        md:flex
+        outline-none
+        pl-[25px]
+        relative
+        border-none;
+      }
     }
-    &__nav-bar {
-        @apply
-        absolute
-        flex
-        flex-col
-        font-family-bold
-        -left-full
-        top-[103%]
-        transition-all
-        w-full
-        z-40;
-        &__link {
-            @apply
-            hover:text-peach
-            bg-slate-50
-            border
-            duration-500
-            opacity-0
-            p-6
-            py-3
-            relative
-            transition-all
-            -left-full
-            md:ml-8;
-            &:nth-child(1) {
-                @apply delay-[400ms];
-            }
-            &:nth-child(2) {
-                @apply delay-[350ms];
-            }
-            &:nth-child(3) {
-                @apply delay-[300ms];
-            }
-            &:nth-child(4) {
-                @apply delay-[250ms];
-            }
-            &:nth-child(5) {
-                @apply delay-[200ms];
-            }
-            &:nth-child(6) {
-                @apply delay-[150ms];
-            }
-            &:nth-child(7) {
-                @apply delay-[150ms];
-            }
-            &:nth-child(8) {
-                @apply delay-[100ms];
-            }
-            &:nth-child(9) {
-                @apply delay-[50ms];
-            }
-            &:last-child {
-                @apply shadow-md;
-            }
-        }
+    .product-list {
+      @apply
+      hidden
+      md:flex;
     }
-    &__hamburger-icon{
-        @apply relative w-6 h-4 md:hidden;
-        &__close {
-            @apply absolute left-0 top-[7px] bg-primary w-full h-[2px];
-        }
-        &::before,
-        &::after {
-            @apply content-[""] absolute bg-primary left-0 w-full h-[2px] transition-all duration-300;
-        }
-        &::before {
-            @apply top-0;
-        }
-        &::after {
-            @apply bottom-0;
-        }
+  }
+  &__nav-products {
+    @apply
+    top-14
+    left-0
+    flex-col
+    md:flex-row;
+  }
+}
+
+.nav-products-section {
+  @apply
+  absolute
+  shadow-md
+  shadow-slate-200
+  top-[8%]
+  md:top-[9%]
+  w-full
+  right-[100%]
+  md:right-0
+  z-[5];
+  .products-section {
+    @apply
+    flex
+    md:block
+    items-center
+    bg-slate-50
+    md:bg-white
+    py-[10px]
+    border-b
+    border-b-zinc-300
+    w-full;
+    &__name,
+    &__desc {
+      @apply
+      font-family-bold
+      px-5;
     }
-    &.hide-nav-bar {
-        .header {
-            &__nav-bar {
-                @apply -left-full delay-1000;
-                &__link {
-                    @apply -left-full;
-                }
-            }
-        }
+    &__desc {
+      @apply
+      font-family-regular
+      text-sm;
     }
-    &.show-nav-bar {
-        .header {
-            &__hamburger-icon {
-                &__close {
-                    @apply hidden;
-                }
-                &::before,
-                &::after {
-                    @apply w-[90%]
-                }
-                &::before {
-                    @apply rotate-45 translate-x-[2px] translate-y-[7px] origin-center;
-                }
-                &::after {
-                    @apply -rotate-45 translate-x-[2px] -translate-y-[7px] origin-center;
-                }
-            }
-            &__nav-bar {
-                @apply top-[103%] left-0;
-                &__link {
-                    @apply left-0 opacity-100;
-                    &:nth-child(1) {
-                        @apply delay-[50ms];
-                    }
-                    &:nth-child(2) {
-                        @apply delay-[50ms];
-                    }
-                    &:nth-child(3) {
-                        @apply delay-[100ms];
-                    }
-                    &:nth-child(3) {
-                        @apply delay-[150ms];
-                    }
-                    &:nth-child(4) {
-                        @apply delay-[200ms];
-                    }
-                    &:nth-child(5) {
-                        @apply delay-[250ms];
-                    }
-                    &:nth-child(6) {
-                        @apply delay-[300ms];
-                    }
-                    &:nth-child(7) {
-                        @apply delay-[350ms];
-                    }
-                    &:nth-child(8) {
-                        @apply delay-[400ms];
-                    }        
-                }
-            }
-        }
+    &__shop {
+      @apply
+      px-[20%]
+      py-[5%]
+      border-l
+      border-l-zinc-300
+      mt-4;
     }
-    @screen md {
-        &.show-nav-bar,
-        &.hide-nav-bar {
-            .header {
-                &__nav-bar {
-                    @apply relative shadow-none flex flex-row left-0 top-0 w-fit;
-                    &__link {
-                        @apply border-0 bg-white delay-[0ms] p-0 left-0 opacity-100 duration-300;
-                        &:last-child {
-                            @apply shadow-none;
-                        }
-                    }
-                }
-            }   
-        }
+    .product-image {
+      @apply
+      w-[30%]
+      md:w-[85%]
+      text-center;
     }
+    .product-info {
+      @apply
+      text-left
+      w-[70%]
+      md:w-full
+      md:text-center;
+    }
+  }
+  .shop-list {
+    @apply
+    hidden
+    md:list-item;
+    &__items {
+      @apply mb-4;
+    }
+  }
+  .mob-list {
+    @apply
+    pl-4
+    md:hidden;
+    &[open]{
+      .shop-list__item {
+        @apply h-[150px];
+      }
+    }
+    summary {
+      @apply my-4;
+      &::marker {
+        @apply content-none;
+      }
+    }
+    .shop-list__item {
+      @apply 
+      pl-4
+      h-0
+      overflow-hidden
+      transition-[height]
+      ease-linear
+      duration-500;
+    }
+  }
+}
+
+.mobile-view {
+  @apply 
+  fixed
+  overflow-hidden;
+  .nav-products-section {
+    @apply
+    fixed
+    bottom-0
+    transition-all
+    duration-300
+    right-0
+    overflow-y-scroll;
+  }
 }
