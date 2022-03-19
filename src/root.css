@@ -92,4 +92,12 @@ body {
             @apply translate-x-[65%] translate-y-[30%] rotate-90;
         }
     }
+    &.disabled,
+    &:disabled {
+        &:after,
+        &:before,
+        & {
+            @apply bg-slate-400 text-white duration-75 shadow-slate-400;
+        }            
+    }
 }

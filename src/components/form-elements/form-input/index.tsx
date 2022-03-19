@@ -16,7 +16,7 @@ export default forwardRef(<TFormValues extends Record<string, unknown>>({
     register,
     rules,
     ...props
-}: InputProps<TFormValues>, ref: any): JSX.Element => {
+}: InputProps<TFormValues>, ref?: any): JSX.Element => {
 
     console.log("Input");
 

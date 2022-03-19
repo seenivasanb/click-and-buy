@@ -1,6 +1,8 @@
-import { ASSETS_PATH } from "../../configuration/variables";
-import React, { memo } from "react"
-import { Link } from "react-router-dom"
+import { ASSETS_PATH } from "configuration/variables";
+import RootContext from "contexts/root-context";
+import { observer } from "mobx-react-lite";
+import React, { memo, useContext } from "react"
+import { Link } from "react-router-dom";
 import "./index.css"
 
 const displayProduct = () => {
@@ -27,17 +29,17 @@ const showMobileMenu = () => {
   }
 }
 
-export default memo(() => {
+export default observer(() => {
+
+  const { userStore } = useContext(RootContext);
+  const handleLogout = () => { userStore.onLogout(); }
+  const isUserExists = userStore.isUserExists;
+
   console.log("Header Component");
   return (
     <>
       <header className="header">
         <div className="bars js-bars" onClick={showMobileMenu}>&#9776;</div>
-        {/* <div className="bar"></div>
-             <div className="bar"></div>
-             <div className="bar"></div>
-          </div> */}
-
         <h1 className="header__logo">Click&amp;Buy</h1>
 
         <div className="header__nav-bar">
@@ -46,9 +48,13 @@ export default memo(() => {
               <span className="header__nav-bar-item1" id='js-nav-product' onMouseOver={displayProduct}>Products</span>
               <i className="arrow-down"></i>
             </li>
-            <li className="header__nav-bar-signin nav-items">
-              <span>SignIn</span>
-            </li>
+            {isUserExists
+              ? <Link className="header__nav-bar__link" onClick={handleLogout} to={""}>Logout</Link>
+              : <>
+                <Link className="header__nav-bar__link" to="/login">Login</Link>
+                <Link className="header__nav-bar__link" to="/register">Register</Link>
+              </>
+            }
           </ul>
           <div className="header__nav-bar-search-field nav-items">
             <input type="search" placeholder="Search for product!!" />
@@ -124,4 +130,4 @@ export default memo(() => {
       </section>
     </>
   )
-})
+});

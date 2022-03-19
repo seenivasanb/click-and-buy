@@ -17,3 +17,6 @@
         @apply absolute bg-white top-10 leading-none mt-2 px-2 right-4 text-xs text-red-500;
     }
 }
+.api-error {
+    @apply text-red-500 mt-4 sm:ml-6 sm:inline;
+}
