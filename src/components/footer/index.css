@@ -2,5 +2,28 @@ footer {
     @apply
     bg-primary
     p-10
-    text-white
+    text-white;
+    .footer {
+      @apply
+      mx-[10%];
+      &__main,
+      &__bottom {
+        @apply
+        flex
+        flex-col
+        sm:flex-row
+        justify-between
+        text-center
+        sm:text-left
+        p-[10px];
+        div {
+          @apply
+          m-2;
+        }
+      }
+      &__bottom {
+          @apply
+          mt-3;
+      }
+    }
 }
