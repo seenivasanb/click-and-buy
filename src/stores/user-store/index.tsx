@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import UserService from "services/user-service";
 import RootStore from "stores";
-import { LoginFormValuesTypes, UserType } from "types/stores/user-store";
+import { LoginFormValuesTypes, RegisterFormValuesTypes, UserType } from "types/stores/user-store";
 
 export default class UserStore {
     user: UserType = {} as UserType;
@@ -25,26 +25,34 @@ export default class UserStore {
     setUser(user: UserType) {
         this.user = user;
         sessionStorage.setItem("user", JSON.stringify(user));
-        sessionStorage.setItem("accessToken", JSON.stringify(user.accessToken));
+        sessionStorage.setItem("accessToken", JSON.stringify(user.password));
     }
 
     *onLogin(loginFormValues: LoginFormValuesTypes): any {
         try {
             this.rootStore.loaderStore.addNewRequest("LoginRequest");
-            const response = yield this.userService.onLogin(loginFormValues);
+            const { status, data } = yield this.userService.onLogin(loginFormValues);
             this.rootStore.loaderStore.removeSuccessRequest("LoginRequest");
-            if (response === "Cannot find user")
-                return 1;
-            if (response === "Incorrect password")
-                return 2
-            if (response?.user && Object.keys(response.user)) {
-                const { user } = response.user;
-                this.setUser({ ...user, accessToken: response.accessToken });
+            if (status === 1) {
+                this.setUser(data);
             }
-            return 3;
+            return status;
         } catch (error) {
-            console.log("error", error);
-            this.rootStore.loaderStore.updateFailedRequest("LoginRequest", "Login request failed");
+            this.rootStore.loaderStore.updateFailedRequest("LoginRequest", "Network failed, Try later!");
+        }
+    }
+
+    *onRegister(registerFormValues: RegisterFormValuesTypes): any {
+        try {
+            this.rootStore.loaderStore.addNewRequest("RegisterRequest");
+            const { status, data } = yield this.userService.onRegister(registerFormValues);
+            this.rootStore.loaderStore.removeSuccessRequest("RegisterRequest");
+            if (status === 1) {
+                this.setUser(data);
+            }
+            return status;
+        } catch (error) {
+            this.rootStore.loaderStore.updateFailedRequest("RegisterRequest", "Network failed, Try later!");
         }
     }
 

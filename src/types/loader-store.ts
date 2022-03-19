@@ -1,7 +1,11 @@
 import { DeepMap } from "react-hook-form"
 
-type LoaderType = {
-    status: "Loading" | "Failed",
+export type LoaderStatus = {
+    status: "Loading" | "Failed"
+}
+
+export type LoaderType = {
+    status: string,
     error?: string
 }
 

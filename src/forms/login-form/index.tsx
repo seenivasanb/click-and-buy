@@ -7,23 +7,21 @@ import { LoginFormErrorsType, LoginFormType, LoginFormValuesTypes } from "types/
 import { observer } from "mobx-react-lite";
 import { computed } from "mobx";
 
-
 export default observer(({ onSubmit }: LoginFormType) => {
-
     console.log("Login Form");
 
     const navigate = useNavigate();
     const [loginFormErrors, setLoginFormErrors] = useState<LoginFormErrorsType>();
     const { userStore, loaderStore } = useContext(RootContext);
-    const loginRequestStatus = computed(() => loaderStore.getStatusByName("LoginRequest"));
+    const loginRequestStatus = computed(() => loaderStore.getStatusByName("LoginRequest")).get();
 
     const handleLogin = useCallback(async (data: LoginFormValuesTypes) => {
         const response = await userStore.onLogin(data);
-        if (response === 1) {
+        if (response === 3) {
             setLoginFormErrors({ email: { type: "validate", message: "Email address does not exists" } });
         } else if (response === 2) {
             setLoginFormErrors({ password: { type: "validate", message: "Wrong password" } });
-        } else if (response === 3) {
+        } else if (response === 1) {
             setLoginFormErrors({});
             navigate("/");
         }
@@ -62,7 +60,7 @@ export default observer(({ onSubmit }: LoginFormType) => {
             onSubmit={onSubmit || handleLogin}
             formFields={LoginFormFields}
             submitButtonName="Login Me"
-            isSubmitting={loginRequestStatus.get()}
+            isSubmitting={loginRequestStatus}
         />
     );
 });

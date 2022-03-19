@@ -1,14 +1,15 @@
 import { FormInput } from "components";
 import React from 'react'
-import { useForm, UseFormRegister } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FormInputType } from "types/form-types";
+import { LoaderType } from "types/loader-store";
 
 type FormProps<TFormValues> = {
     onSubmit: (data: any) => void,
     formFields?: FormInputType<TFormValues>[],
     formName: string,
     submitButtonName?: string,
-    isSubmitting?: boolean
+    isSubmitting?: LoaderType | undefined
 }
 
 export default <TFormValues extends Record<string, unknown>>({
@@ -20,6 +21,9 @@ export default <TFormValues extends Record<string, unknown>>({
         handleSubmit,
     } = useForm({ shouldUseNativeValidation: false });
 
+    const isLoading = isSubmitting?.status === "Loading" ? true : false;
+    const isFailed = isSubmitting?.status === "Failed" ? true : false;
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} >
             {formFields?.map((field: any) => {
@@ -29,10 +33,11 @@ export default <TFormValues extends Record<string, unknown>>({
             })
             }
             <button type="submit"
-                className={`button-primary ${isSubmitting ? "disabled" : ""}`}
-                disabled={isSubmitting}>
-                {isSubmitting ? "Loading..." : submitButtonName ? submitButtonName : "Submit"}
+                className={`button-primary ${isLoading ? "disabled" : ""}`}
+                disabled={isLoading}>
+                {isLoading ? "Loading..." : submitButtonName ? submitButtonName : "Submit"}
             </button>
+            {isFailed ? <p className="api-error">{isSubmitting?.error}</p> : ""}
         </form >
     )
 }

@@ -1,13 +1,23 @@
 import { FormComponent } from "components";
-import React, { memo, useCallback, useState } from "react"
+import RootContext from "contexts/root-context";
+import { computed } from "mobx";
+import { observer } from "mobx-react-lite";
+import React, { useCallback, useContext, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { FormInputType } from "types/form-types";
+import { RegisterFormErrorsType, RegisterFormType, RegisterFormValuesTypes } from "types/user-store";
 import PasswordStrengthTooltip from "./password-strength";
 import "./password-strength.css";
 
-export default memo(({ formName, onSubmit, submitButtonName }: any): JSX.Element => {
-
+export default observer(({ onSubmit }: RegisterFormType): JSX.Element => {
+    console.log("Register Form");
+    const navigate = useNavigate();
     const [passwordValue, setPasswordValue] = useState("");
     const [isPasswordStrengthPopupVisible, setPasswordStrengthPopupVisible] = useState(false);
+    const [registerFormErrors, setRegisterFormErrors] = useState<RegisterFormErrorsType>();
+    const { userStore, loaderStore } = useContext(RootContext);
+    const registerRequestStatus = computed(() => loaderStore.getStatusByName("RegisterRequest"));
+    console.log("registerRequestStatus", registerRequestStatus.get());
 
     const showPasswordStrengthPopup = useCallback(() => {
         setPasswordStrengthPopupVisible(true);
@@ -16,6 +26,16 @@ export default memo(({ formName, onSubmit, submitButtonName }: any): JSX.Element
     const hidePasswordStrengthPopup = useCallback(() => {
         setPasswordStrengthPopupVisible(false);
     }, [isPasswordStrengthPopupVisible]);
+
+    const handleRegister = useCallback(async (data: RegisterFormValuesTypes) => {
+        const response = await userStore.onRegister(data);
+        if (response === 2) {
+            setRegisterFormErrors({ email: { type: "validate", message: "Email is already exists" } });
+        } else if (response === 1) {
+            setRegisterFormErrors({});
+            navigate("/");
+        }
+    }, [registerFormErrors]);
 
     const formFields: FormInputType<Record<string, unknown>>[] = [
         {
@@ -39,6 +59,7 @@ export default memo(({ formName, onSubmit, submitButtonName }: any): JSX.Element
                     message: "Invalid email address"
                 }
             },
+            error: registerFormErrors?.email
         },
         {
             id: "password",
@@ -76,10 +97,11 @@ export default memo(({ formName, onSubmit, submitButtonName }: any): JSX.Element
     return (
         <div>
             <FormComponent
-                formName={formName}
-                onSubmit={onSubmit}
+                formName="register-form"
+                onSubmit={onSubmit || handleRegister}
                 formFields={formFields}
-                submitButtonName={submitButtonName}
+                submitButtonName="Register Me"
+                isSubmitting={registerRequestStatus.get()}
             />
         </div>
     );

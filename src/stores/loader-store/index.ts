@@ -1,6 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import RootStore from "stores";
-import { LoaderItemType } from "types/stores/loader-store";
+import { LoaderItemType } from "types/loader-store";
 
 export default class LoaderStore {
     loader: LoaderItemType = {} as LoaderItemType;
@@ -16,7 +16,7 @@ export default class LoaderStore {
     }
 
     getStatusByName(name: string) {
-        return this.loader[name]?.status;
+        return this.loader[name];
     }
 
     addNewRequest(name: string) {

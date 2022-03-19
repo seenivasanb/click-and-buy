@@ -4,17 +4,24 @@ export type UserType = {
     email: string,
     password: string,
     id?: number,
-    accessToken?: string
+    accessToken: string
 }
 
 export type UserStoreType = {
     user: UserType,
     getUser: () => void,
-    onLogin: (username: string, password: string) => void
+    onLogin: (loginValues: LoginFormValuesTypes) => void,
+    onRegister: (registerValues: RegisterFormValuesTypes) => void
 }
 
 export type LoginFormValuesTypes = {
     email: string,
+    password: string
+}
+
+export type RegisterFormValuesTypes = {
+    email: string,
+    name: string,
     password: string
 }
 
@@ -27,6 +34,16 @@ export type LoginFormErrorsType = {
     password?: FieldError
 }
 
+export type RegisterFormErrorsType = {
+    email?: FieldError,
+    name?: FieldError,
+    password?: FieldError
+}
+
 export type LoginFormType = {
     onSubmit?: (values: LoginFormValuesTypes) => void,
+}
+
+export type RegisterFormType = {
+    onSubmit?: (registerValues: RegisterFormValuesTypes) => void
 }

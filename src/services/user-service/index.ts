@@ -1,5 +1,5 @@
 import { API_URL } from "configuration/variables";
-import { LoginFormValuesTypes } from "types/stores/user-store";
+import { LoginFormValuesTypes, RegisterFormValuesTypes } from "types/stores/user-store";
 
 export default class UserService {
     async onLogin(loginFormValues: LoginFormValuesTypes) {
@@ -11,7 +11,18 @@ export default class UserService {
                 "Accept": "application/json"
             }
         });
+        return response.json();
+    }
 
+    async onRegister(registerFormValues: RegisterFormValuesTypes) {
+        const response = await fetch(`${API_URL}/register`, {
+            method: "POST",
+            body: JSON.stringify(registerFormValues),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        });
         return response.json();
     }
 }
