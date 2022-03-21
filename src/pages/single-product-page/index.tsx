@@ -1,4 +1,4 @@
-import { ASSETS_PATH } from "configuration/variables";
+import { ASSETS_PATH } from "configuration/constants";
 import React, { memo } from "react"
 import "./index.css"
 

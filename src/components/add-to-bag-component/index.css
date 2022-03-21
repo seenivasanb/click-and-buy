@@ -1,0 +1,15 @@
+.add-to-bag-button {
+    @apply inline-block leading-loose border border-slate-200 rounded-full text-center w-[110px];
+    .plus-and-minus {
+        @apply w-full flex justify-evenly items-center text-3xl leading-[0];
+        .active {
+            @apply text-primary;
+        }
+    }
+    .minus {
+        @apply text-slate-200;
+    }
+    .quantity {
+        @apply w-11 text-center text-base leading-relaxed border-x;
+    }
+}
