@@ -1,0 +1,18 @@
+ .expender {
+    @apply border-b;
+    &__title {
+        @apply font-family-bold border-t py-4 relative cursor-pointer;
+        &::after {
+            @apply absolute content-['\2038'] text-5xl leading-[0] top-2 right-0 w-4 h-4;
+        } 
+    }
+    &__content {
+        @apply hidden mb-4;
+    }
+    &.open &__title {
+        @apply after:rotate-180 after:top-8;
+    }
+    &.open &__content {
+        @apply block;
+    }
+}
