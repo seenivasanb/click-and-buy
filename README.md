@@ -64,10 +64,10 @@ yarn commit-push "Home page has been created"
 Create the PR to push the code to the `development` branch. Once it approved you can merge the branch.
 
 ### Test on Dev site
-Use the [Dev URL](https://seenivasanbalakrishnan.github.io/ai-mirror-react-poc/dev/) to test the features in the dev site.
+Use the [Dev URL](https://seenivasanb.github.io/click-and-buy/dev/) to test the features in the dev site.
  
 ### Create the PR for Live Push
 Create the PR to push the code to the `main` branch. Once it approved you can merge the branch.
 
 ### Test on Live site
-Use the [Live URL](https://seenivasanbalakrishnan.github.io/ai-mirror-react-poc/live/) to test the features in the dev site.
+Use the [Live URL](https://seenivasanb.github.io/click-and-buy/live/) to test the features in the dev site.
