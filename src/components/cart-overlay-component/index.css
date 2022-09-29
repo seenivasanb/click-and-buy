@@ -1,0 +1,27 @@
+.cart-overlay {
+    @apply fixed w-full h-full duration-500 right-0 top-0 z-10 translate-x-full transition-transform;
+    &.show {
+        @apply translate-x-0;
+    }
+    &__bg {
+        @apply absolute bg-slate-500 bg-opacity-30 w-full h-full;
+    }
+    &__content {
+        @apply absolute bg-white h-full right-0 top-0 sm:max-w-md;
+    }
+}
+.cart {
+    &__header {
+        @apply font-family-bold text-base border-b p-4;
+    }
+    &__content {
+        @apply overflow-y-scroll h-[calc(100vh-57px)];
+    }
+    .close-btn {
+        @apply absolute cursor-pointer text-xl leading-6 right-4 before:content-['\2716'];
+    }
+}
+
+.order-summary {
+    @apply text-sm;
+}

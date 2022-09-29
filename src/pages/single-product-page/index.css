@@ -1,126 +1,135 @@
-.sppcontainer{
-    @apply
-    bg-slate-50
-    p-16;
-.productpage {
-    @apply
-    flex
-    justify-start;
-    &__image {
-        @apply
-        flex
-        relative
-        w-1/2;   
+body {
+    @apply bg-slate-50/70;
+}
+.spp {
+    @apply flex justify-start flex-col-reverse lg:flex-row;
+    &__image-panel {
+        @apply mt-6 lg:w-7/12 lg:m-0;
+    }
+    &__benefits {
+        @apply flex font-bold text-black my-12 text-sm justify-around;
+        &__points {
+            @apply text-center;
+        }
     }
     &__details {
-        @apply    
-        pl-32;
-        &__price {
-            @apply
-            font-bold
-            mt-3;
+        @apply lg:pl-12 lg:w-5/12;
+    }
+    &__title {
+        @apply mb-2;
+    }
+    &__price {
+        @apply font-family-bold text-xl mb-1;
+        &__actual {
+            @apply text-lg font-family-regular line-through text-slate-500;
         }
     }
-    
-    &__ratingimage{
-        @apply
-        relative
-        h-24
-        flex;
-        &__ratingnumber {
-            @apply
-            m-1;
+    &__installment-text {
+        @apply text-slate-500 mb-2;
+    }
+    &__ratings {
+        @apply relative flex items-center mb-4;
+    }
+    &__rating-star {
+        @apply w-5;
+    }
+    &__rating-count {
+        @apply ml-1;
+    }
+    &__shades {
+        @apply mb-5;
+        &__name {
+            @apply font-family-bold mb-2;
+        }
+        &__btn {
+            @apply border-slate-300 border rounded-full inline-block relative mr-2 cursor-pointer;
+            &__color {
+                @apply border-[3px] border-white bg-teal-800 rounded-full w-8 h-8;
+            }
+            &::before {
+                @apply 
+                absolute 
+                content-[""] 
+                hidden 
+                w-11
+                h-[1px]
+                bg-slate-700
+                shadow-sm
+                shadow-white
+                rotate-[135deg]
+                -translate-x-1/2
+                translate-y-1/2
+                left-1/2 top-1/2
+                last-of-type:bg-slate-200;
+            }
+            &.disabled {
+                @apply before:block;
+            }
+            &::after {
+                @apply 
+                content-[""]
+                scale-0
+                absolute
+                left-1/2
+                top-1/2
+                transition-all
+                duration-300
+                -translate-x-1/2
+                -translate-y-1/2
+                rounded-full
+                shadow-inner
+                shadow-slate-300
+                bg-white w-3 h-3;
+            }
+            &:hover {
+                @apply after:scale-75;
+            }
+            &.active {
+                @apply after:scale-100;
+            }
         }
     }
-    &__selectbutton{
+    &__select-button{
+        @apply mt-4;
         &__radiobtn {
-            @apply
-            w-8
-            h-8
-            m-4; 
+            @apply w-8 h-8 m-4;
         }
     }
-    &__size {
-        @apply
-        font-family-bold
-        font-extrabold;
-        &__quantity {
-            @apply
-            hover:border-current
-            w-24
-            h-10
-            text-center
-            border
-            m-1;
+    &__sizes {
+        @apply font-family-bold mb-4;
+        &__name {
+            @apply mb-2;
         }
-    }
-    &__customise {
-       
-        &__personalize {
-            @apply
-            block
-            font-family-bold
-            font-extrabold
-            hover:border-current
-            w-full
-            h-12
-            text-center
-            border
-            mt-8;
+        &__quantity-btn {
+            @apply border p-1 px-4 mr-2 inline transition duration-300 hover:border-slate-400;
+            &.active {
+                @apply border-primary;
+            }
         }
-        
-        &__addtocart {
+    }            
+    &__button {
+        .add-to-bag-button {
             @apply
             font-family-bold
-            font-extrabold 
             text-white
             bg-slate-700
-          hover:bg-white 
-          hover:text-black
-            w-96
-            h-12
+            hover:bg-white 
+            hover:text-black
+            cursor-pointer
+            transition
+            duration-300
+            w-full
+            py-2
             text-center
             border
-            mt-5;
+            mt-5
+            mb-10;
         }
-        
-        &__tagline {
-            @apply 
-            mt-4
-            text-center;
-            
-        }
-        
     }
-    
- }
- .benifits {
-     @apply
-     flex
-     font-bold
-     text-black;
-     &__points {
-    @apply
-    text-center
-    m-14;     
-     }
  }
  .product-samples {
-    @apply
-    w-1/2
-     
-    flex;
-     
-     
+    @apply w-full flex mb-24;
      &__image {
-         @apply
-         flex
-         m-8;
-       
-        
-        
-    
-     }
-   
+         @apply flex m-8;
+     }  
  }
-}

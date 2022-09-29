@@ -1,7 +1,7 @@
-import { ASSETS_PATH } from "configuration/variables";
+import { ASSETS_PATH } from "configuration/constants";
 import RootContext from "contexts/root-context";
 import { observer } from "mobx-react-lite";
-import React, { memo, useContext } from "react"
+import React, { memo, useContext, useEffect } from "react"
 import { Link } from "react-router-dom";
 import "./index.css"
 
@@ -31,7 +31,7 @@ const showMobileMenu = () => {
 
 export default observer(() => {
 
-  const { userStore } = useContext(RootContext);
+  const { userStore, uiStore } = useContext(RootContext);
   const handleLogout = () => { userStore.onLogout(); }
   const isUserExists = userStore.isUserExists;
 
@@ -62,7 +62,7 @@ export default observer(() => {
               <img src={`${ASSETS_PATH}/images/icon/search.png`} alt="Search Cart" />
             </div>
           </div>
-          <div className="header__nav-bar-shopping-cart">
+          <div className="header__nav-bar-shopping-cart" onClick={() => uiStore.showCartOverlayVisibility()}>
             <img src={`${ASSETS_PATH}/images/icon/shopping-cart.png`} alt="Shopping Cart" />
           </div>
         </div>

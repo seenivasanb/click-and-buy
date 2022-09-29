@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import UserService from "services/user-service";
 import RootStore from "stores";
-import { LoginFormValuesTypes, RegisterFormValuesTypes, UserType } from "types/stores/user-store";
+import { LoginFormValuesTypes, RegisterFormValuesTypes, UserType } from "types/user-store";
 
 export default class UserStore {
     user: UserType = {} as UserType;
