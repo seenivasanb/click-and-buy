@@ -1,4 +1,4 @@
-import { ASSETS_PATH } from "configuration/variables";
+import { ASSETS_PATH } from "configuration/constants";
 import { LoginForm, PaymentForm, ShippingForm } from "forms";
 import RegisterForm from "forms/register-form";
 import React, { memo, Suspense, useCallback, useEffect, useState } from "react"

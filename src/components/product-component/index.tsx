@@ -1,4 +1,4 @@
-import { ASSETS_PATH } from "configuration/variables";
+import { ASSETS_PATH } from "configuration/constants";
 import React, { Fragment, memo } from 'react'
 import "./index.css"
 import { Link } from "react-router-dom";

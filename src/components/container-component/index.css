@@ -1,7 +1,7 @@
 .wrapper {
     @apply
     p-5
-    pt-20
+    pt-10
     md:container
     md:mx-auto
     md:p-8
