@@ -1,2 +1,2 @@
-"use strict";(self.webpackChunkai_mirror_react_poc=self.webpackChunkai_mirror_react_poc||[]).push([[380],{380:(e,o,r)=>{r.r(o),r.d(o,{default:()=>a});var t=r(294);const a=(0,t.memo)((function(){return console.log("Not Found Page"),t.createElement("h1",null,"Not found page")}))}}]);
+"use strict";(self.webpackChunkai_mirror_react_poc=self.webpackChunkai_mirror_react_poc||[]).push([[380],{2380:(e,o,r)=>{r.r(o),r.d(o,{default:()=>a});var t=r(7294);const a=(0,t.memo)((function(){return console.log("Not Found Page"),t.createElement("h1",null,"Not found page")}))}}]);
 //# sourceMappingURL=380.bundle.js.map
