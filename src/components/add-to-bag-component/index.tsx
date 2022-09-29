@@ -1,14 +1,23 @@
 import { MAX_QUANTITY } from "configuration/constants"
-import React from 'react'
+import RootContext from "contexts/root-context";
+import React, { useContext } from 'react';
 import './index.css'
 
 type Props = {
-    quantity: number
+    quantity: number,
+    product: any
 }
 
-export default ({ quantity }: Props) => {
+export default ({ product, quantity }: Props) => {
+
+    const { cartStore } = useContext(RootContext);
+
+    const addItemToCart = () => {
+        cartStore.addCartItem(product);
+    }
+
     return (
-        <div className="add-to-bag-button">
+        <div className="add-to-bag-button" onClick={addItemToCart}>
             {!quantity
                 ? <div>Add To Cart</div>
                 : <div className="plus-and-minus">
