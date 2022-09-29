@@ -1,5 +1,5 @@
 import { ProductListComponent } from "components"
-import { ASSETS_PATH } from "configuration/variables"
+import { ASSETS_PATH } from "configuration/constants"
 import { PRODUCTS } from "mock-data/products"
 import React, { memo } from "react"
 import { ProductCategoryType } from "types/products"

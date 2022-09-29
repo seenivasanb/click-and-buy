@@ -3,7 +3,7 @@ import RootContext from "contexts/root-context";
 import React, { useCallback, useContext, useState } from "react"
 import { useNavigate } from "react-router";
 import { FormInputType } from "types/form-types";
-import { LoginFormErrorsType, LoginFormType, LoginFormValuesTypes } from "types/stores/user-store";
+import { LoginFormErrorsType, LoginFormType, LoginFormValuesTypes } from "types/user-store";
 import { observer } from "mobx-react-lite";
 import { computed } from "mobx";
 

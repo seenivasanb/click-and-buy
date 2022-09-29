@@ -1,5 +1,5 @@
-import { API_URL } from "configuration/variables";
-import { LoginFormValuesTypes, RegisterFormValuesTypes } from "types/stores/user-store";
+import { API_URL } from "configuration/constants";
+import { LoginFormValuesTypes, RegisterFormValuesTypes } from "types/user-store";
 
 export default class UserService {
     async onLogin(loginFormValues: LoginFormValuesTypes) {
