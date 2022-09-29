@@ -1,0 +1,334 @@
+.product {
+    @apply mb-5 md:mb-0;
+    &--with-size {
+        &__details { @apply pt-5 px-4; }
+        &__image { @apply relative; }
+        &__sub-title { @apply leading-none opacity-80 text-xs; }
+        &__title { @apply leading-normal text-lg; }
+        &__overlay {
+            @apply  absolute bg-primary bg-opacity-40 cursor-pointer
+            duration-500 flex items-center justify-center h-full hover:opacity-100
+            left-0 opacity-0 top-0 transition-opacity w-full;
+        }
+        &__sizes {
+            @apply font-bold;
+            &__title {
+                @apply mb-2 text-xs text-white text-center text-opacity-70;
+            }
+            &__size {
+                @apply border inline-block duration-500 mx-1 py-3 px-6
+                text-xs text-white text-center transition-all hover:text-primary hover:bg-white;
+            }
+        }
+        .small & {
+            &__sub-title { @apply leading-none text-xs; }
+            &__title { @apply leading-normal text-lg; }
+            &__sizes {
+                &__title { @apply text-xs; }
+                &__size { @apply py-2 px-5 text-xs; }
+            }
+        }
+        .medium & {
+            &__sub-title { @apply text-base; }
+            &__title { @apply text-2xl; }
+            &__sizes {
+                &__title { @apply mb-3 text-base; }
+                &__size { @apply mx-2 py-3 px-8 text-base; }
+            }
+        }
+        .large & {
+            &__sub-title { @apply text-2xl; }
+            &__title { @apply text-4xl; }
+            &__sizes {
+                &__title { @apply mb-5 text-2xl; }
+                &__size { @apply py-8 px-16 text-2xl; }
+            }
+        }
+        .extra-large & {
+            &__sub-title { @apply text-3xl; }
+            &__title { @apply text-5xl; }
+            &__sizes {
+                &__title { @apply mb-5 text-3xl; }
+                &__size { @apply mx-4 py-8 px-16 text-3xl; }
+            }
+        }
+        @screen md {
+            .products-column-medium-3 & {
+                @apply small;
+            }
+            .products-column-medium-2 & {
+                @apply medium;
+            }
+            .products-column-medium-1 & {
+                @apply large;
+            }
+            .products-row-medium-1 & {
+                @apply max-w-[28vw] small;
+            }
+            .products-row-medium-2 & {
+                @apply max-w-[44vw] medium;
+            }
+            .products-row-medium-3 & {
+                @apply max-w-[100vw] large;
+            }
+        }
+        @screen lg {
+            .products-column-large-3 & {
+                @apply small;
+            }
+            .products-column-large-2 & {
+                @apply medium;
+            }
+            .products-column-large-1 & {
+                @apply large;
+            }
+            .products-row-large-1 & {
+                @apply max-w-[28vw] small;
+            }
+            .products-row-large-2 & {
+                @apply max-w-[44vw] medium;
+            }
+            .products-row-large-3 & {
+                @apply max-w-[100vw] large;
+            }
+        }
+        @screen xl {
+            .products-column-extra-large-3 & {
+                @apply medium;
+            }
+            .products-column-extra-large-2 & {
+                @apply large;
+            }
+            .products-column-extra-large-1 & {
+                @apply extra-large;
+            }
+            .products-row-extra-large-1 & {
+                @apply max-w-[30vw] small;
+            }
+            .products-row-extra-large-2 & {
+                @apply max-w-[47vw] large;
+            }
+            .products-row-extra-large-3 & {
+                @apply max-w-[100vw] extra-large;
+            }
+        }
+    }
+    
+    &--with-cta {
+        @apply
+        relative;
+        &__details {
+            @apply
+            absolute
+            flex
+            flex-col
+            items-start
+            justify-center
+            h-full
+            right-[10%]
+            top-0
+            w-[40%];
+        }
+        &__title {
+            @apply
+            leading-normal
+            mb-2
+            text-lg;
+        }
+        &__sub-title {
+            @apply
+            leading-normal
+            text-secondary
+            text-sm;
+        }
+        &__cta {
+            @apply
+            flex
+            font-family-bold
+            items-end
+            justify-end
+            text-sm
+            mt-4
+            underline
+            w-full;
+        }
+        .small & {
+            &__details {
+                @apply right-[6%] w-[43%];
+            }
+            &__title {
+                @apply mb-2 leading-tight text-sm;
+            }
+            &__sub-title {
+                @apply text-[10px];
+            }
+            &__cta {
+                @apply mt-4 text-[10px];  
+            }
+        }
+        .small-2 & {
+            &__details {
+                @apply right-[7%] w-[42%];
+            }
+            &__title {
+                @apply mb-3 leading-snug text-lg;
+            }
+            &__cta {
+                @apply mt-7;
+            }
+        }
+        .medium & {
+            &__details {
+                @apply right-[8%] w-[40%];
+            }
+            &__title {
+                @apply mb-3 leading-snug text-xl;
+            }
+            &__sub-title {
+                @apply text-sm;
+            }
+            &__cta {
+                @apply text-sm mt-8;
+            }
+        }
+        .medium-2 & {
+            &__details {
+                @apply right-[10%] w-[36%];
+            }
+            &__title {
+                @apply text-2xl;
+            }
+            &__sub-title {
+                @apply text-base;
+            }
+            &__cta {
+                @apply text-base mt-12;
+            }
+        }
+        .large & {
+            &__details {
+                @apply w-[40%] right-[8%];
+            }
+            &__title {
+                @apply mb-4 leading-snug text-3xl;
+            }
+            &__sub-title {
+                @apply text-xl;
+            }
+            &__cta {
+                @apply mt-12 text-xl;
+            }
+        }
+        .large-2 & {
+            &__details {
+                @apply w-[35%] right-[10%];
+            }
+            &__sub-title {
+                @apply text-xl;
+            }
+            &__cta {
+                @apply mt-20 text-xl;
+            }
+        }
+        .extra-large & {
+            &__details {    
+                @apply right-[10%] w-[36%];
+            }
+            &__title {
+                @apply mb-6 leading-tight text-4xl;
+            }
+            &__sub-title {
+                @apply leading-normal text-2xl;
+            }
+            &__cta {
+                @apply mt-20 text-2xl;
+            }
+        }
+        .extra-large-1 & {
+            &__details {    
+                @apply right-[8%] w-[39%];
+            }
+            &__title {
+                @apply mb-6 leading-tight text-5xl;
+            }
+            &__sub-title {
+                @apply leading-normal text-3xl;
+            }
+            &__cta {
+                @apply mt-24 text-3xl;
+            }
+        }
+        @screen md {
+            .products-column-medium-3 & {
+                @apply small;
+            }
+            .products-column-medium-2 & {
+                @apply medium;
+            }
+            .products-column-medium-1 & {
+                @apply large large-2;
+            }
+            .products-row-medium-1 & {
+                @apply max-w-[33vw] small;
+            }
+            .products-row-medium-2 & {
+                @apply max-w-[50vw] medium;
+            }
+            .products-row-medium-3 & {
+                @apply max-w-[70vw] large;
+            }
+            .products-row-medium-4 & {
+                @apply max-w-[100vw] extra-large;
+            }
+        }
+        @screen lg {
+            .products-column-large-3 & {
+                @apply small small-2;
+            }
+            .products-column-large-2 & {
+                @apply medium medium-2;
+            }
+            .products-column-large-1 & {
+                @apply extra-large;
+            }
+            .products-row-large-1 & {
+                @apply max-w-[33vw] small;
+            }
+            .products-row-large-2 & {
+                @apply max-w-[50vw] medium;
+            }
+            .products-row-large-3 & {
+                @apply max-w-[70vw] large;
+            }
+            .products-row-large-4 & {
+                @apply max-w-[100vw] extra-large-1;
+            }
+        }
+        @screen xl {
+            .products-column-extra-large-3 & {
+                @apply medium;
+            }
+            .products-column-extra-large-2 & {
+                @apply large;
+            }
+            .products-column-extra-large-1 & {
+                @apply extra-large-1;
+            }
+            .products-row-extra-large-1 & {
+                @apply max-w-[30%] medium;
+            }
+            .products-row-extra-large-2 & {
+                @apply max-w-[50%] large;
+            }
+            .products-row-extra-large-3 & {
+                @apply max-w-[70%] extra-large;
+            }
+            .products-row-extra-large-4 & {
+                @apply max-w-[100%] extra-large-1;
+            }
+            .products-row-extra-large-4 & &__details {
+                @apply right-[10%] w-[35%];
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.fieldset {
+    @apply mb-6 md:mb-8 relative;
+    .label {
+        @apply absolute bg-white pointer-events-none leading-none px-4 left-2 transition-all duration-300 top-5;
+    }
+    .textbox {
+        @apply border border-slate-300 cursor-pointer outline-none p-5 py-4 w-full;
+        &:focus,
+        &:not(:placeholder-shown),
+        &.filled {
+            & + .label {
+                @apply px-2 text-xs left-4 -top-3;
+            }
+        }
+    }
+    .error {
+        @apply absolute bg-white top-10 leading-none mt-2 px-2 right-4 text-xs text-red-500;
+    }
+}
+.api-error {
+    @apply text-red-500 mt-4 sm:ml-6 sm:inline;
+}

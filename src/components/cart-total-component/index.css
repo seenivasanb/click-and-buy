@@ -1,0 +1,15 @@
+.cart-total {
+    @apply p-4;
+    &__item {
+        @apply flex flex-row justify-between mb-1;
+        &.sub-total {
+            @apply font-family-bold;
+        }
+        &.tax {
+            @apply mt-4 mb-0;
+        }
+    }
+}
+.cart-final-total {
+    @apply border-y flex flex-row font-family-bold justify-between p-4 text-lg;
+}

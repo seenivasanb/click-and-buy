@@ -1,5 +1,12 @@
-.container {
+.wrapper {
     @apply
-    m-10
-    min-h-[60vh]
+    p-5
+    pt-10
+    md:container
+    md:mx-auto
+    md:p-8
+    md:pt-20
+    md:max-w-6xl
+    lg:p-0
+    lg:pt-16;
 }

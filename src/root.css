@@ -4,20 +4,26 @@
 @layer base {
     @font-face {
         font-family: "regular-font";
-        src: local("regular-font"), url(./../assests/fonts/regular.woff2) format("woff2");
+        src: local("regular-font"), url(./../assets/fonts/regular.woff2) format("woff2");
     }
     @font-face {
         font-family: "bold-font";
-        src: local("bold-font"), url(./../assests/fonts/bold.woff2) format("woff2");
+        src: local("bold-font"), url(./../assets/fonts/bold.woff2) format("woff2");
     }
 }
 @tailwind utilities;
 
 /* base changes */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 body {
-    @apply 
-    tracking-wider
-    text-primary;
+    @apply
+    font-family-regular
+    text-primary
+    tracking-wider;
     h1 {
         @apply text-4xl
     }
@@ -32,5 +38,66 @@ body {
     }
     h1, h2, h3, h4 {
         @apply font-family-bold leading-relaxed;
+    }
+    img {
+        @apply
+        w-full
+    }
+}
+
+/* button primary */
+.button-primary {
+    @apply 
+    bg-primary
+    cursor-pointer
+    duration-1000
+    font-family-bold
+    focus:outline-none
+    overflow-hidden
+    p-4
+    px-10
+    relative
+    shadow-lg
+    shadow-primary/70
+    text-white
+    tracking-widest
+    transition-all
+    z-0;
+    &:before,
+    &::after {
+        @apply
+        content-[""]
+        absolute
+        bg-peach
+        duration-1000
+        h-[150px]
+        rotate-45
+        transition-all
+        w-[150px]
+        -z-10;
+    }
+    &::before {
+        @apply left-full top-[50%];
+    }
+    &::after {
+        @apply bg-peach right-full -top-[220%];
+    }
+    &:hover,
+    &:focus {
+        @apply shadow-peach/70 outline-none;
+        &:before {
+            @apply translate-x-[-65%] translate-y-[-30%] rotate-90;
+        }
+        &::after {
+            @apply translate-x-[65%] translate-y-[30%] rotate-90;
+        }
+    }
+    &.disabled,
+    &:disabled {
+        &:after,
+        &:before,
+        & {
+            @apply bg-slate-400 text-white duration-75 shadow-slate-400;
+        }            
     }
 }

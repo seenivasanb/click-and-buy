@@ -1,0 +1,31 @@
+.product-list {
+    @apply text-sm;
+}
+
+.product-item {
+    @apply border-b flex flex-row text-sm -tracking-tight p-4 py-5;
+    &__image {
+        @apply w-1/4;
+        img {
+            @apply border;
+        }
+    }
+    &__content {
+        @apply flex flex-col ml-4 w-2/4;
+    }
+    &__name {
+        @apply font-family-bold text-base;
+    }
+    &__close-and-price {
+        @apply font-family-bold text-right w-1/4 flex flex-col justify-between;
+    }
+    &__close {
+        @apply text-2xl text-slate-300 leading-none;
+    }
+    &__price {
+        @apply text-base;
+    }
+    &__add-to-bag {
+        @apply mt-2;
+    }
+}
